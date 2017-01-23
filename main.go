@@ -45,7 +45,7 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-var UserMessage String = message.Text
+var UserMessage string = message.Text
 
 	for _, event := range events {
 		if event.Type == linebot.EventTypeMessage {
