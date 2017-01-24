@@ -1,4 +1,4 @@
-// Licensed under the Apache License, Version 2.0 (the "License");
+ï»¿// Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
 // You may obtain a copy of the License at
 //
@@ -75,9 +75,9 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 
 		switch mode {
 		case 1:
-			BotMessage = '¤¤¤å'
+			BotMessage = 'ä¸­æ–‡'
 		case 2:
-			BotMessage = "¤¤¤å¤G"
+			BotMessage = "ä¸­æ–‡äºŒ"
 		}
 
 //		if BotMessage != "" {
