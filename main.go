@@ -46,10 +46,11 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	var UserMessage = ""
-	var BotMessage = ""
 	var i = 30
+//	var UserMessage = ""
+	var BotMessage = ""
 
+	/*
 	for _, event := range events {
 		if event.Type == linebot.EventTypeMessage {
 			switch message := event.Message.(type) {
@@ -57,10 +58,8 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
             	UserMessage = message.Text
 			}
 		}
-
+					   */
 	BotMessage := strconv.Itoa(i)
-
-
 
 //         switch UserMessage := UserMessage{
 //		 case "1":
