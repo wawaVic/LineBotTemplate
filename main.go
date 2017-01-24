@@ -65,13 +65,13 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 		}
 
 		ifgoogle := strings.Split(UserMessage, " ")
-		bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage("Debug: " + UserMessage)).Do()
 
 		google, SearchFoor := ifgoogle[0], ifgoogle[1]
 		google = strings.ToLower(google)
 		if reflect.DeepEqual(google, GoogleKey) {
 			BotMessage = "https://www.google.com.tw/#q=" + SearchFoor
 		}
+		bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage("Debug: " + UserMessage)).Do()
 		
 		if reflect.DeepEqual(UserMessage, Hello) {
 			BotMessage = "你好阿"
