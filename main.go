@@ -57,7 +57,7 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 			switch message := event.Message.(type) {
 			case *linebot.TextMessage:
             	UserMessage = message.Text
-            	MessageContent = message.content
+//            	MessageContent = message.content
 			}
 		}
 
@@ -77,7 +77,7 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 
 		switch mode {
 		case 1:
-			BotMessage = "中文"
+			BotMessage = "0x1000AF"
 		case 2:
 			BotMessage = "中文二"
 		}
@@ -86,7 +86,7 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 //			bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage("mode: " + mode + " Message: " + BotMessage + " UserMessage: " + UserMessage)).Do()
 			bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage("mode: " + modestr + " Message: " + BotMessage + " UserMessage: " + UserMessage)).Do()
 		}
-		bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage("Content: " + MessageContent + " UserMessage: " + UserMessage)).Do()
+//		bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage("Content: " + MessageContent + " UserMessage: " + UserMessage)).Do()
   	}
 
 /*
