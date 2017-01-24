@@ -52,6 +52,7 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 	var Hello string = "安安"
 	var Vic string = "殺蛙"
 	var Benson string = "陳冠宇"
+	var Drew string = "彥竹"
 
 	for _, event := range events {
 		if event.Type == linebot.EventTypeMessage {
@@ -77,10 +78,13 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 			BotMessage = "你好阿"
 		}
 		if reflect.DeepEqual(UserMessage, Vic) {
-			BotMessage = "根本新北彭于晏!"
+			BotMessage = "新北彭于晏!"
 		}
 		if reflect.DeepEqual(UserMessage, Benson) {
-			BotMessage = "根本天母帥哥FBI!"
+			BotMessage = "天母烤秋勤大師"
+		}
+		if reflect.DeepEqual(UserMessage, Drew) {
+			BotMessage = "! 臺中馮迪索"
 		}
 
 		switch mode {
