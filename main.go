@@ -46,6 +46,7 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 	}
 
 	var UserMessage = ""
+	var BotMessage = ""
 
 	for _, event := range events {
 		if event.Type == linebot.EventTypeMessage {
@@ -54,9 +55,19 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
             	UserMessage = message.Text
 			}
 		}
-//		if err != nil {
-			bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage(UserMessage +" OKOOK!")).Do()
-//		}
+
+         switch UserMessage := UserMessage{
+		 case 1
+			BotMessage = "111"
+		 case 2
+			BotMessage = "222"
+		 case ²n
+			BotMessage = "²n¤T¤p"
+		 }
+
+		if BotMessage != nil {
+			bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage(BotMessage)).Do()
+		}
   	}
 
 /*
