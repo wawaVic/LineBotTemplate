@@ -18,6 +18,7 @@ import (
 	"net/http"
 	"os"
 	"strconv"
+	"reflect"
 
 	"github.com/line/line-bot-sdk-go/linebot"
 )
@@ -48,6 +49,7 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 
 	var UserMessage string
 	var BotMessage string
+	var Hello string = "你好阿"
 //	var s string = "2"
 
 
@@ -71,7 +73,7 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 			BotMessage = "222"
 		}
 */
-		if UserMessage = "安安" {
+		if reflect.DeepEqual(UserMessage, Hello) {
 			BotMessage = "你好阿"
 		}
 
