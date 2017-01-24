@@ -48,7 +48,7 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 
 	var UserMessage = ""
 	var BotMessage = ""
-	var s string = "2"
+//	var s string = "2"
 
 
 	for _, event := range events {
@@ -59,7 +59,12 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 			}
 		}
 
-	mode := strconv.ParseInt(s, 10, 64)
+//	mode := strconv.ParseInt(s, 10, 64)
+
+        mode, e := strconv.Atoi(UserMessage)
+	    if e != nil {
+    	    fmt.Println(e)
+	    }
 
 //	NewMessage := strconv.Itoa(i)
 
