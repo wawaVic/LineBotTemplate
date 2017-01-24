@@ -75,7 +75,7 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 
 		switch mode {
 		case 1:
-			BotMessage = '中文'
+			BotMessage = "中文"
 		case 2:
 			BotMessage = "中文二"
 		}
