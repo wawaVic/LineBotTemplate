@@ -56,6 +56,7 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 	var Vic string = "殺蛙"
 	var Benson string = "陳冠宇"
 	var Drew string = "彥竹"
+	var Ziv string = "七七"
 
 	for _, event := range events {
 		if event.Type == linebot.EventTypeMessage {
@@ -85,7 +86,10 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 			BotMessage = "天母烤秋勤大師"
 		}
 		if reflect.DeepEqual(UserMessage, Drew) {
-			BotMessage = "! 臺中馮迪索"
+			BotMessage = "臺中送粽雞"
+		}
+		if reflect.DeepEqual(UserMessage, Ziv) {
+			BotMessage = "龜山嫩拉NPC"
 		}
 
 		//模式區
@@ -109,7 +113,7 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 			bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage(BotMessage)).Do()
 		}
 		//reply end
-			bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage("Debug: " + UserMessage)).Do()
+//			bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage("Debug: " + UserMessage)).Do()
   	}
 
 /*原版
