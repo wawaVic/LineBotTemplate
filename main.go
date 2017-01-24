@@ -93,7 +93,7 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 		if BotMessage != "" {
 //			bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage("mode: " + mode + " Message: " + BotMessage + " UserMessage: " + UserMessage)).Do()
 //			bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage("mode: " + modestr + " Message: " + BotMessage + " UserMessage: " + UserMessage)).Do()
-			bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage(BotMessage.Do()
+			bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage(BotMessage).Do()
 		}
   	}
 
