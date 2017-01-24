@@ -55,7 +55,9 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 			}
 		}
   	}
-	bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage(message.ID+":"+ message.Text +" OKOOK!")).Do()
+	if err != nil {
+		bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage(message.ID+":"+ message.Text +" OKOOK!")).Do()
+	}
 
 /*
 	for _, event := range events {
