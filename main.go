@@ -58,7 +58,7 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 			}
 		}
 
-	mode = strconv.Atoi(UserMessage)
+	mode := strconv.Atoi(UserMessage)
 
 //	NewMessage := strconv.Itoa(i)
 	UserMessage = NewMessage
