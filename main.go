@@ -49,6 +49,7 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 
 	var UserMessage string
 	var BotMessage string
+	var Google string = "google"
 	var Hello string = "安安"
 	var Vic string = "殺蛙"
 	var Benson string = "陳冠宇"
@@ -62,18 +63,7 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 			}
 		}
 
-//	mode := strconv.ParseInt(s, 10, 64)
 
-        mode, e := strconv.Atoi(UserMessage)
-	    if e != nil {
-    	    fmt.Println(e)
-	    }
-//	    modestr := strconv.Itoa(mode)
-/*
-		if mode = 2 {
-			BotMessage = "222"
-		}
-*/
 		if reflect.DeepEqual(UserMessage, Hello) {
 			BotMessage = "你好阿"
 		}
@@ -87,21 +77,30 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 			BotMessage = "! 臺中馮迪索"
 		}
 
+		//模式區
+        mode, e := strconv.Atoi(UserMessage)
+	    if e != nil {
+    	    fmt.Println(e)
+	    }
+	    //modestr := strconv.Itoa(mode)
+
 		switch mode {
 		case 1:
 			BotMessage = "中文"
 		case 2:
 			BotMessage = "中文二"
 		}
+		//模式區end
 
+		//reply
 		if BotMessage != "" {
-//			bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage("mode: " + mode + " Message: " + BotMessage + " UserMessage: " + UserMessage)).Do()
 //			bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage("mode: " + modestr + " Message: " + BotMessage + " UserMessage: " + UserMessage)).Do()
 			bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage(BotMessage)).Do()
 		}
+		//reply end
   	}
 
-/*
+/*原版
 	for _, event := range events {
 		if event.Type == linebot.EventTypeMessage {
 			switch message := event.Message.(type) {
