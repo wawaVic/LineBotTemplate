@@ -54,9 +54,9 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
             	UserMessage = message.Text
 			}
 		}
-		if err != nil {
+//		if err != nil {
 			bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage(UserMessage +" OKOOK!")).Do()
-		}
+//		}
   	}
 
 /*
