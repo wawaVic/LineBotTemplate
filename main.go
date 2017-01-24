@@ -51,7 +51,7 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 	var UserMessage string
 	var BotMessage string
 	var GoogleKey string = "google"
-	vat GoogleLength int
+	var GoogleLength int
 	var Hello string = "安安"
 	var Vic string = "殺蛙"
 	var Benson string = "陳冠宇"
