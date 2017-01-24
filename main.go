@@ -58,12 +58,9 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 			}
 		}
 
-	mode := strconv.Atoi(UserMessage)
+	mode := strconv.ParseInt(UserMessage, 10, 64)
 
 //	NewMessage := strconv.Itoa(i)
-	UserMessage = NewMessage
-
-
 
          switch mode := mode{
 		 case 1:
