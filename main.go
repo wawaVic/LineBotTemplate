@@ -54,10 +54,10 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
             	UserMessage = message.Text
 			}
 		}
+		if err != nil {
+			bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage(message.ID+":"+ UserMessage +" OKOOK!")).Do()
+		}
   	}
-	if err != nil {
-		bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage(message.ID+":"+ message.Text +" OKOOK!")).Do()
-	}
 
 /*
 	for _, event := range events {
