@@ -49,7 +49,7 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 
 	var UserMessage string
 	var BotMessage string
-	var Hello string = "你好阿"
+	var Hello string = "安安"
 //	var s string = "2"
 
 
