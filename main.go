@@ -67,7 +67,7 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 	    if e != nil {
     	    fmt.Println(e)
 	    }
-	    modestr := strconv.Itoa(mode)
+//	    modestr := strconv.Itoa(mode)
 /*
 		if mode = 2 {
 			BotMessage = "222"
