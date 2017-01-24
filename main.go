@@ -68,7 +68,7 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 		}
 
 		ifsearch := strings.Split(UserMessage, " ")
-		SearchLength = len(ifgoogle)
+		SearchLength = len(ifsearch)
   		if SearchLength > 1 {
 			engine, SearchFor := ifsearch[0], ifsearch[1]
 			engine = strings.ToLower(engine)
