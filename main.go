@@ -70,13 +70,8 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 			BotMessage = "222"
 		}
 */
-		output := (mode * 2)
 
-		if output = 2 {
-			BotMessage = "222"
-		}
-
-		switch mode := mode {
+		switch mode {
 		case 1:
 			BotMessage = "111"
 		case 2:
