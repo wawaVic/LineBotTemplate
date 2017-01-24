@@ -65,7 +65,7 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 		}
 
 		ifgoogle := strings.Split(UserMessage, " ")
-		google, SearchFoor := s[0], s[1]
+		google, SearchFoor := ifgoogle[0], ifgoogle[1]
 		if reflect.DeepEqual(google, GoogleKey) {
 			BotMessage = "https://www.google.com.tw/#q=" + SearchFoor
 		}
