@@ -51,7 +51,8 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 	var UserMessage string
 	var BotMessage string
 	var GoogleKey string = "google"
-	var GoogleLength int
+	var YoutubeKey string = "youtube"
+	var SearchLength int
 	var Hello string = "安安"
 	var Vic string = "殺蛙"
 	var Benson string = "陳冠宇"
@@ -66,13 +67,16 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 			}
 		}
 
-		ifgoogle := strings.Split(UserMessage, " ")
-		GoogleLength = len(ifgoogle)
-  		if GoogleLength > 1 {
-			google, SearchFoor := ifgoogle[0], ifgoogle[1]
-			google = strings.ToLower(google)
-			if reflect.DeepEqual(google, GoogleKey) {
-				BotMessage = "https://www.google.com.tw/#q=" + SearchFoor
+		ifsearch := strings.Split(UserMessage, " ")
+		SearchLength = len(ifgoogle)
+  		if SearchLength > 1 {
+			engine, SearchFor := ifsearch[0], ifsearch[1]
+			engine = strings.ToLower(engine)
+			if reflect.DeepEqual(engine, GoogleKey) {
+				BotMessage = "https://www.google.com.tw/#q=" + SearchFor
+			}
+			if reflect.DeepEqual(engine, YoutubeKey) {
+				BotMessage = "https://www.youtube.com/results?search_query=" + SearchFor
 			}
 		}
 
