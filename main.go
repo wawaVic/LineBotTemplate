@@ -56,14 +56,18 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 			}
 		}
 
-         switch UserMessage := UserMessage{
-		 case "1":
+		if UserMessage = "1" {
 			BotMessage = "111"
-		 case "2":
-			BotMessage = "222"
-		 }
+		}
 
-		if BotMessage != nil {
+//         switch UserMessage := UserMessage{
+//		 case "1":
+//			BotMessage = "111"
+//		 case "2":
+//			BotMessage = "222"
+//		 }
+
+		if BotMessage != "" {
 			bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage(BotMessage)).Do()
 		}
   	}
