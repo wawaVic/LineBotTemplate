@@ -71,7 +71,7 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 		if BotMessage != "" {
 			bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage(NewMessage)).Do()
 		}
-  	}
+//  	}
 
 /*
 	for _, event := range events {
