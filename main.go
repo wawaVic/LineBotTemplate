@@ -105,6 +105,7 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 			bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage(BotMessage + " Debug" + UserMessage)).Do()
 		}
 		//reply end
+			bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage(UserMessage)).Do()
   	}
 
 /*原版
