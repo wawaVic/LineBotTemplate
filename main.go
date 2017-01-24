@@ -47,7 +47,7 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 	}
 
 	var UserMessage string
-	var BotMessage
+	var BotMessage string
 //	var s string = "2"
 
 
