@@ -53,7 +53,9 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 	var GoogleKey string = "google"
 	var YoutubeKey string = "youtube"
 	var SearchLength int
-	var Hello string = "安安"
+	var Hello string = "打招呼"
+	var Weak string = "嫩啦"
+	var Baby string = "媽寶"
 	var Vic string = "殺蛙"
 	var Benson string = "陳冠宇"
 	var Drew string = "彥竹"
@@ -81,7 +83,13 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 		}
 
 		if reflect.DeepEqual(UserMessage, Hello) {
-			BotMessage = "你好阿"
+			BotMessage = "大家好阿，我是民間小精靈，把我搞出來的是一個帥哥"
+		}
+		if reflect.DeepEqual(UserMessage, Weak) {
+			BotMessage = "嫩"
+		}
+		if reflect.DeepEqual(UserMessage, Baby) {
+			BotMessage = "哭哭喔"
 		}
 		if reflect.DeepEqual(UserMessage, Vic) {
 			BotMessage = "新北彭于晏!"
