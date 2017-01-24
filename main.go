@@ -46,7 +46,6 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	var i = 30
 	var UserMessage = ""
 	var BotMessage = ""
 
@@ -59,19 +58,22 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 			}
 		}
 
-	NewMessage := strconv.Itoa(i)
-	BotMessage = "debug"
+	mode = strconv.Atoi(UserMessage)
+
+//	NewMessage := strconv.Itoa(i)
 	UserMessage = NewMessage
 
-//         switch UserMessage := UserMessage{
-//		 case "1":
-//			BotMessage = "111"
-//		 case "2":
-//			BotMessage = "222"
-//		 }
+
+
+         switch mode := mode{
+		 case 1:
+			BotMessage = "111"
+		 case 2:
+			BotMessage = "222"
+		 }
 
 		if BotMessage != "" {
-			bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage(UserMessage + " : " + NewMessage)).Do()
+			bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage("mode: " + mode + " Message: " + BotMessage)).Do()
 		}
   	}
 
