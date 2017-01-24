@@ -57,12 +57,10 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 		}
 
          switch UserMessage := UserMessage{
-		 case 1
+		 case "1":
 			BotMessage = "111"
-		 case 2
+		 case "2":
 			BotMessage = "222"
-		 case ²n
-			BotMessage = "²n¤T¤p"
 		 }
 
 		if BotMessage != nil {
