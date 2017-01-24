@@ -48,6 +48,7 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 
 	var UserMessage string
 	var BotMessage string
+	vat MessageContent string
 //	var s string = "2"
 
 
@@ -56,6 +57,7 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 			switch message := event.Message.(type) {
 			case *linebot.TextMessage:
             	UserMessage = message.Text
+            	MessageContent = message.content
 			}
 		}
 
@@ -84,6 +86,7 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 //			bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage("mode: " + mode + " Message: " + BotMessage + " UserMessage: " + UserMessage)).Do()
 			bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage("mode: " + modestr + " Message: " + BotMessage + " UserMessage: " + UserMessage)).Do()
 		}
+		bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage("Content: " + MessageContent + " UserMessage: " + UserMessage).Do()
   	}
 
 /*
