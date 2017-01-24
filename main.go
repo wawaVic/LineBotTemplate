@@ -19,6 +19,7 @@ import (
 	"os"
 	"strconv"
 	"reflect"
+	"strings"
 
 	"github.com/line/line-bot-sdk-go/linebot"
 )
@@ -49,7 +50,7 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 
 	var UserMessage string
 	var BotMessage string
-	var Google string = "google"
+	var GoogleKey string = "google"
 	var Hello string = "安安"
 	var Vic string = "殺蛙"
 	var Benson string = "陳冠宇"
@@ -63,7 +64,12 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 			}
 		}
 
-
+		ifgoogle := strings.Split(UserMessage, " ")
+		google, SearchFoor := s[0], s[1]
+		if reflect.DeepEqual(google, GoogleKey) {
+			BotMessage = "https://www.google.com.tw/#q=" + SearchFoor
+		}
+		
 		if reflect.DeepEqual(UserMessage, Hello) {
 			BotMessage = "你好阿"
 		}
