@@ -64,7 +64,6 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 			}
 		}
 
-		if 
 		ifgoogle := strings.Split(UserMessage, " ")
 		google, SearchFoor := ifgoogle[0], ifgoogle[1]
 		google = strings.ToLower("google")
