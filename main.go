@@ -64,9 +64,10 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 			}
 		}
 		bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage("Debug: " + UserMessage)).Do()
+		bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage("Debug: " + UserMessage)).Do()
 
 		ifgoogle := strings.Split(UserMessage, " ")
-		
+
 		bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage("Debug: " + UserMessage)).Do()
 
 		google, SearchFoor := ifgoogle[0], ifgoogle[1]
