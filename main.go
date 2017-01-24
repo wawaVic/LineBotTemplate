@@ -59,7 +59,7 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 			}
 		}
 					   */
-	BotMessage := strconv.Itoa(i)
+	NewMessage := strconv.Itoa(i)
 
 //         switch UserMessage := UserMessage{
 //		 case "1":
@@ -69,7 +69,7 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 //		 }
 
 		if BotMessage != "" {
-			bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage(BotMessage)).Do()
+			bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage(NewMessage)).Do()
 		}
   	}
 
