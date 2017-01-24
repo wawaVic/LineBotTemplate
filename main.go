@@ -80,10 +80,10 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 			BotMessage = "中文二"
 		}
 
-//		if BotMessage != "" {
+		if BotMessage != "" {
 //			bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage("mode: " + mode + " Message: " + BotMessage + " UserMessage: " + UserMessage)).Do()
 			bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage("mode: " + modestr + " Message: " + BotMessage + " UserMessage: " + UserMessage)).Do()
-//		}
+		}
   	}
 
 /*
