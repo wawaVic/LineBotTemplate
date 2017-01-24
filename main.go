@@ -60,6 +60,7 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 		}
 
 	NewMessage := strconv.Itoa(i)
+	BotMessage = "debug"
 
 //         switch UserMessage := UserMessage{
 //		 case "1":
