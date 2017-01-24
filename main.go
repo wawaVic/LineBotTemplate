@@ -48,6 +48,7 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 
 	var UserMessage = ""
 	var BotMessage = ""
+	var s string = "2"
 
 
 	for _, event := range events {
@@ -58,7 +59,7 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 			}
 		}
 
-	mode := strconv.ParseInt(UserMessage, 10, 64)
+	mode := strconv.ParseInt(s, 10, 64)
 
 //	NewMessage := strconv.Itoa(i)
 
@@ -70,7 +71,7 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 		 }
 
 		if BotMessage != "" {
-			bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage("mode: " + mode + " Message: " + BotMessage)).Do()
+			bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage("mode: " + mode + " Message: " + BotMessage + " UserMessage: " + UserMessage)).Do()
 		}
   	}
 
