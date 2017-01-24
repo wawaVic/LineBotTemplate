@@ -61,20 +61,22 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 
 //	mode := strconv.ParseInt(s, 10, 64)
 
-        mode, e := strconv.Atoi(UserMessage)
+        mode, e := strconv.Atoi(message.Text)
 	    if e != nil {
     	    fmt.Println(e)
 	    }
 
-//	NewMessage := strconv.Itoa(i)
-
-         switch mode := mode{
+		if mode = 2 {
+			BotMessage = "222"
+		}
+/*
+         switch mode := mode {
 		 case 1:
 			BotMessage = "111"
 		 case 2:
 			BotMessage = "222"
 		 }
-
+*/
 		if BotMessage != "" {
 			bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage("mode: " + mode + " Message: " + BotMessage + " UserMessage: " + UserMessage)).Do()
 		}
