@@ -106,7 +106,7 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 		//reply
 		if BotMessage != "" {
 //			bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage("mode: " + modestr + " Message: " + BotMessage + " UserMessage: " + UserMessage)).Do()
-			bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage(BotMessage + " Debug" + UserMessage)).Do()
+			bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage(BotMessage)).Do()
 		}
 		//reply end
 			bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage("Debug: " + UserMessage)).Do()
