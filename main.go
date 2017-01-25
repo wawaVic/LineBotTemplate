@@ -55,11 +55,19 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 	var SearchLength int
 	var Hello string = "打招呼"
 	var Weak string = "嫩啦"
+	var Wantpapapa string = "我像大砲"
 	var Baby string = "媽寶"
+	
 	var Vic string = "殺蛙"
 	var Benson string = "陳冠宇"
 	var Drew string = "彥竹"
 	var Ziv string = "七七"
+	//var Kai string = "啾啾"
+	//var Lee string = "李志乾"
+	//var Hector string = "頂超"
+	//var Neal string = "賴博彩"
+	//var Cat string = "小貓咪"
+	//var Alvin string = "張銘仁"
 
 	for _, event := range events {
 		if event.Type == linebot.EventTypeMessage {
@@ -88,11 +96,14 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 		if reflect.DeepEqual(UserMessage, Weak) {
 			BotMessage = "嫩"
 		}
+		if reflect.DeepEqual(UserMessage, Wantpapapa) {
+			BotMessage = "他說OK沒問題"
+		}
 		if reflect.DeepEqual(UserMessage, Baby) {
 			BotMessage = "哭哭喔"
 		}
 		if reflect.DeepEqual(UserMessage, Vic) {
-			BotMessage = "新北彭于晏!"
+			BotMessage = "樹林彭于晏!"
 		}
 		if reflect.DeepEqual(UserMessage, Benson) {
 			BotMessage = "天母烤秋勤大師"
@@ -101,7 +112,7 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 			BotMessage = "臺中送粽雞"
 		}
 		if reflect.DeepEqual(UserMessage, Ziv) {
-			BotMessage = "龜山嫩拉NPC"
+			BotMessage = "龜山嫩啦NPC"
 		}
 
 		//模式區
