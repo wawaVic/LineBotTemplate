@@ -94,7 +94,7 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 				BotMessage = "Google搜尋結果：\n https://www.google.com.tw/#q=" + SearchFor
 			}
 			if reflect.DeepEqual(engine, YoutubeKey) {
-				BotMessage = "Youtube搜尋結果\n https://www.youtube.com/results?search_query=" + SearchFor
+				BotMessage = "Youtube搜尋結果：\n https://www.youtube.com/results?search_query=" + SearchFor
 			}
 		}
 
@@ -217,6 +217,7 @@ func randomcase() string {
 		"吃很燙的拉麵",
 		"切生魚片",
 		"脫褲子",
+		"打手槍",
 	}
 	rand.Seed(time.Now().UnixNano())
 	var who string = name[rand.Intn(len(name))]
