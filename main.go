@@ -57,7 +57,7 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 	var YoutubeKey string = "youtube"
 	//var SearchLength int
 	//var RandomLength int
-	var SpaceSplitLength int
+	//var SpaceSplitLength int
 	var Hello string = "打招呼"
 	var Weak string = "嫩啦"
 	var Wantpapapa string = "我像大砲"
@@ -90,7 +90,7 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 
 		//輸入以空白隔開字串
 		spacesplit := strings.Split(MultiMessage, " ")
-		SpaceSplitLength = len(spacesplit)
+//		SpaceSplitLength = len(spacesplit)
 		inputOne, inputTwo, inputThree := spacesplit[0], spacesplit[1], spacesplit[2]
 
 
