@@ -90,10 +90,10 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 			engine, SearchFor := ifsearch[0], ifsearch[1]
 			engine = strings.ToLower(engine)
 			if reflect.DeepEqual(engine, GoogleKey) {
-				BotMessage = "https://www.google.com.tw/#q=" + SearchFor
+				BotMessage = "Google搜尋結果：\n https://www.google.com.tw/#q=" + SearchFor
 			}
 			if reflect.DeepEqual(engine, YoutubeKey) {
-				BotMessage = "https://www.youtube.com/results?search_query=" + SearchFor
+				BotMessage = "Youtube搜尋結果\n https://www.youtube.com/results?search_query=" + SearchFor
 			}
 		}
 
@@ -133,12 +133,17 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
   		if SearchLength == 3 {
 			who, where, doing := ifrandom[0], ifrandom[1], ifrandom[2]
 			engine = strings.ToLower(engine)
-			if reflect.DeepEqual(who, WhoKey); reflect.DeepEqual(where, WhereKey); reflect.DeepEqual(doing, DoingKey) {
-				BotMessage = randomcase()
+//			if reflect.DeepEqual(who, WhoKey); reflect.DeepEqual(where, WhereKey); reflect.DeepEqual(doing, DoingKey) {
+//				BotMessage = randomcase()
+//			}
+			if reflect.DeepEqual(who, WhoKey) {
+				if reflect.DeepEqual(where, WhereKey) {
+					if reflect.DeepEqual(doing, DoingKey) {
+    					BotMessage = randomcase()
+					}
+				}
 			}
 		}
-
-
 
 		//模式區
         mode, e := strconv.Atoi(UserMessage)
@@ -220,7 +225,5 @@ func randomcase() string {
 
 	var result string =	strings.Join([]string{who, where, doing}, " ")
 
-
-	
 	return result
 }
