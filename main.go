@@ -74,6 +74,9 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 	//var Cat string = "小貓咪"
 	//var Alvin string = "張銘仁"
 
+	var inputOne string = ""
+	var inputTwo string = ""
+	var inputThree string = ""
 	var WhoKey string = "誰"
 	var WhereKey string = "哪裡"
 	var DoingKey string = "在幹嘛"
