@@ -68,11 +68,11 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 	var Drew string = "彥竹"
 	var Ziv string = "七七"
 	var Kai string = "啾啾"
-	//var Lee string = "李志乾"
-	//var Hector string = "頂超"
-	//var Neal string = "賴博彩"
-	//var Cat string = "小貓咪"
-	//var Alvin string = "張銘仁"
+	var Lee string = "李志乾"
+	var Hector string = "頂超"
+	var Neal string = "賴博彩"
+	var Cat string = "小貓咪"
+	var Alvin string = "張銘仁"
 
 	//var inputOne string = ""
 	//var inputTwo string = ""
@@ -154,7 +154,7 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 			BotMessage = "樹林彭于晏!"
 		}
 		if reflect.DeepEqual(UserMessage, Benson) {
-			BotMessage = "天母烤秋勤大師"
+			BotMessage = "天母國文自以為小老師"
 		}
 		if reflect.DeepEqual(UserMessage, Drew) {
 			BotMessage = "臺中送粽雞"
@@ -164,6 +164,21 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 		}
 		if reflect.DeepEqual(UserMessage, Kai) {
 			BotMessage = "南港欺負粉粉大哥"
+		}
+		if reflect.DeepEqual(UserMessage, Lee) {
+			BotMessage = "天母"
+		}
+		if reflect.DeepEqual(UserMessage, Hector) {
+			BotMessage = "北投癡漢"
+		}
+		if reflect.DeepEqual(UserMessage, Neal) {
+			BotMessage = "新竹波波熊股東"
+		}
+		if reflect.DeepEqual(UserMessage, Cat) {
+			BotMessage = "基隆廟口鼎邊銼難吃"
+		}
+		if reflect.DeepEqual(UserMessage, Alvin) {
+			BotMessage = "永和有永和路，中和也有永和路，中和有中和路，永和也有中和路；中和的中和路有接永和的中和路，永和的永和路沒接中和的永和路；永和的中和路有接永和的永和路，中和的永和路沒接中和的中和路。"
 		}
 
 /*關閉
