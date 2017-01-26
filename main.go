@@ -17,7 +17,7 @@ import (
 	"log"
 	"net/http"
 	"os"
-	"strconv"
+	//"strconv"
 	"reflect"
 	"strings"
 	"math/rand"
@@ -51,6 +51,7 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 	}
 
 	var UserMessage string
+	var MultiMessage string
 	var BotMessage string
 	var GoogleKey string = "google"
 	var YoutubeKey string = "youtube"
