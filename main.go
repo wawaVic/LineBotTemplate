@@ -54,8 +54,9 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 	var BotMessage string
 	var GoogleKey string = "google"
 	var YoutubeKey string = "youtube"
-	var SearchLength int
-	var RandomLength int
+	//var SearchLength int
+	//var RandomLength int
+	var SpaceSplitLength int
 	var Hello string = "打招呼"
 	var Weak string = "嫩啦"
 	var Wantpapapa string = "我像大砲"
@@ -82,24 +83,59 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 			switch message := event.Message.(type) {
 			case *linebot.TextMessage:
             	UserMessage = message.Text
+            	MultiMessage = message.Text
 			}
 		}
 
-		ifsearch := strings.Split(UserMessage, " ")
-		SearchLength = len(ifsearch)
-  		if SearchLength == 2 {
-			engine, SearchFor := ifsearch[0], ifsearch[1]
-			engine = strings.ToLower(engine)
-			if reflect.DeepEqual(engine, GoogleKey) {
-				BotMessage = "Google搜尋結果：\n https://www.google.com.tw/#q=" + SearchFor
+		//輸入以空白隔開字串
+		spacesplit := strings.Split(MultiMessage, " ")
+		SpaceSplitLength = len(spacesplit)
+		inputOne, inputTwo, inputThree := spacesplit[0], spacesplit[1], spacesplit[2]
+
+
+
+        //搜尋區
+		//ifsearch := strings.Split(MultiMessage, " ")
+		//SearchLength = len(ifsearch)
+  		//if SearchLength == 2 {
+		//	engine, SearchFor := ifsearch[0], ifsearch[1]
+			inputOne = strings.ToLower(inputOne)
+			if reflect.DeepEqual(inputOne, GoogleKey) {
+				BotMessage = "Google搜尋結果：\n https://www.google.com.tw/#q=" + inputTwo
 			}
-			if reflect.DeepEqual(engine, YoutubeKey) {
-				BotMessage = "Youtube搜尋結果：\n https://www.youtube.com/results?search_query=" + SearchFor
+			if reflect.DeepEqual(inputOne, YoutubeKey) {
+				BotMessage = "Youtube搜尋結果：\n https://www.youtube.com/results?search_query=" + inputTwo
 			}
+		//}
+        //搜尋區end
+
+        //亂數區
+        /*
+		if reflect.DeepEqual(UserMessage, WhoKey) {
+			BotMessage = randomcase()
 		}
+		*/
+		//ifrandom := strings.Split(MultiMessage, " ")
+		//RandomLength = len(ifrandom)
+  		//if RandomLength == 3 {
+		//	who, where, doing := ifrandom[0], ifrandom[1], ifrandom[2]
+//			if reflect.DeepEqual(who, WhoKey); reflect.DeepEqual(where, WhereKey); reflect.DeepEqual(doing, DoingKey) {
+//				BotMessage = randomcase()
+//			}
+			if reflect.DeepEqual(inputOne, WhoKey) {
+				if reflect.DeepEqual(inputTwo, WhereKey) {
+					if reflect.DeepEqual(inputThree, DoingKey) {
+    					BotMessage = randomcase()
+					}
+				}
+			}
+		//}
+        //亂數區end
+
+
 
 		if reflect.DeepEqual(UserMessage, Hello) {
-			BotMessage = "大家好阿，我是民間小精靈，把我搞出來的是一個帥哥"
+			BotMessage = "大家好阿，我是民間小精靈，你們這些小GG"
 		}
 		if reflect.DeepEqual(UserMessage, Weak) {
 			BotMessage = "嫩"
@@ -123,28 +159,7 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 			BotMessage = "龜山嫩啦NPC"
 		}
 
-        //亂數區
-        /*
-		if reflect.DeepEqual(UserMessage, WhoKey) {
-			BotMessage = randomcase()
-		}
-		*/
-		ifrandom := strings.Split(UserMessage, " ")
-		RandomLength = len(ifrandom)
-  		if RandomLength == 3 {
-			who, where, doing := ifrandom[0], ifrandom[1], ifrandom[2]
-//			if reflect.DeepEqual(who, WhoKey); reflect.DeepEqual(where, WhereKey); reflect.DeepEqual(doing, DoingKey) {
-//				BotMessage = randomcase()
-//			}
-			if reflect.DeepEqual(who, WhoKey) {
-				if reflect.DeepEqual(where, WhereKey) {
-					if reflect.DeepEqual(doing, DoingKey) {
-    					BotMessage = randomcase()
-					}
-				}
-			}
-		}
-
+/*關閉
 		//模式區
         mode, e := strconv.Atoi(UserMessage)
 	    if e != nil {
@@ -159,6 +174,7 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 			BotMessage = "中文二"
 		}
 		//模式區end
+*/
 
 		//reply
 		if BotMessage != "" {
@@ -206,6 +222,7 @@ func randomcase() string {
 		"在家裡的地板",
 		"在公司開重要會議時",
 		"在暗戀的女生的房間",
+		"在丁丁房間",
 	}
 	thing := []string{
 		"放鞭炮",
@@ -218,6 +235,7 @@ func randomcase() string {
 		"切生魚片",
 		"脫褲子",
 		"打手槍",
+		"比賽挖鼻屎",
 	}
 	rand.Seed(time.Now().UnixNano())
 	var who string = name[rand.Intn(len(name))]
