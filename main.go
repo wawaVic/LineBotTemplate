@@ -71,8 +71,9 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 	//var Cat string = "小貓咪"
 	//var Alvin string = "張銘仁"
 
-	var Who string = "誰"
-//	var Where string = "在哪裡"
+	var WhoKey string = "誰"
+	var WhereKey string = "哪裡"
+	var DoingKey string = "在幹嘛"
 
 
 	for _, event := range events {
@@ -122,9 +123,21 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 		}
 
         //亂數區
-		if reflect.DeepEqual(UserMessage, Who) {
+        /*
+		if reflect.DeepEqual(UserMessage, WhoKey) {
 			BotMessage = randomcase()
 		}
+		*/
+		ifrandom := strings.Split(UserMessage, " ")
+		RandomLength = len(ifrandom)
+  		if SearchLength == 3 {
+			who, where, doing := ifrandom[0], ifrandom[1], ifrandom[2]
+			engine = strings.ToLower(engine)
+			if reflect.DeepEqual(who, WhoKey); reflect.DeepEqual(where, WhereKey); reflect.DeepEqual(doing, DoingKey) {
+				BotMessage = randomcase()
+			}
+		}
+
 
 
 		//模式區
@@ -179,12 +192,35 @@ func randomcase() string {
 		"小貓咪",
 		"張銘仁",
 	}
-	rand.Seed(time.Now().UnixNano()) // Try changing this number!
+	place := []string{
+		"在大庭廣眾下",
+		"在陳冠宇家",
+		"在空無一人的浴室",
+		"在安靜的圖書館",
+		"在一萬英呎的高空",
+		"在家裡的地板",
+		"在公司開重要會議時",
+		"在暗戀的女生的房間",
+	}
+	thing := []string{
+		"放鞭炮",
+		"發呆",
+		"開噴",
+		"大喊：我要當老師",
+		"癡漢笑",
+		"放屁",
+		"吃很燙的拉麵",
+		"切生魚片",
+		"脫褲子",
+	}
+	rand.Seed(time.Now().UnixNano())
 	var who string = name[rand.Intn(len(name))]
+	var where string = place[rand.Intn(len(place))]
+	var doing string = thing[rand.Intn(len(thing))]
 
-
+	var result string =	strings.Join([]string{who, where, doing}, " ")
 
 
 	
-	return who
+	return result
 }
