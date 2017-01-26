@@ -72,6 +72,7 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 	//var Alvin string = "張銘仁"
 
 	var Who string = "誰"
+//	var Where string = "在哪裡"
 
 
 	for _, event := range events {
@@ -84,7 +85,7 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 
 		ifsearch := strings.Split(UserMessage, " ")
 		SearchLength = len(ifsearch)
-  		if SearchLength > 1 {
+  		if SearchLength = 2 {
 			engine, SearchFor := ifsearch[0], ifsearch[1]
 			engine = strings.ToLower(engine)
 			if reflect.DeepEqual(engine, GoogleKey) {
@@ -166,7 +167,7 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 }
 
 func randomcase() string {
-	answers := []string{
+	name := []string{
 		"殺蛙",
 		"陳冠宇",
 		"彥竹",
@@ -179,7 +180,11 @@ func randomcase() string {
 		"張銘仁",
 	}
 	rand.Seed(time.Now().UnixNano()) // Try changing this number!
-	var who string = answers[rand.Intn(len(answers))]
+	var who string = name[rand.Intn(len(name))]
+
+
+
+
 	
 	return who
 }
