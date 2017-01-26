@@ -130,9 +130,8 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 		*/
 		ifrandom := strings.Split(UserMessage, " ")
 		RandomLength = len(ifrandom)
-  		if SearchLength == 3 {
+  		if RandomLength == 3 {
 			who, where, doing := ifrandom[0], ifrandom[1], ifrandom[2]
-			engine = strings.ToLower(engine)
 //			if reflect.DeepEqual(who, WhoKey); reflect.DeepEqual(where, WhereKey); reflect.DeepEqual(doing, DoingKey) {
 //				BotMessage = randomcase()
 //			}
