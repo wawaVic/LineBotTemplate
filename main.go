@@ -167,16 +167,16 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 
 func randomcase() string {
 	answers := []string{
-		"殺蛙"
-		"陳冠宇"
-		"彥竹"
-		"七七"
-		"啾啾"
-		"李志乾"
-		"頂超"
-		"賴博彩"
-		"小貓咪"
-		"張銘仁"
+		"殺蛙",
+		"陳冠宇",
+		"彥竹",
+		"七七",
+		"啾啾",
+		"李志乾",
+		"頂超",
+		"賴博彩",
+		"小貓咪",
+		"張銘仁",
 	}
 	rand.Seed(time.Now().UnixNano()) // Try changing this number!
 	var who string = answers[rand.Intn(len(answers))]
