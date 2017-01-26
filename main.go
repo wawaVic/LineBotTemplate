@@ -55,6 +55,7 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 	var GoogleKey string = "google"
 	var YoutubeKey string = "youtube"
 	var SearchLength int
+	var RandomLength int
 	var Hello string = "打招呼"
 	var Weak string = "嫩啦"
 	var Wantpapapa string = "我像大砲"
