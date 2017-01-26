@@ -93,8 +93,15 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 		//輸入以空白隔開字串
 		spacesplit := strings.Split(MultiMessage, " ")
 		SpaceSplitLength = len(spacesplit)
-  		if SpaceSplitLength > 1 {
-			inputOne, inputTwo, inputThree := spacesplit[0], spacesplit[1], spacesplit[2]
+  		if SpaceSplitLength == 2 {
+			//inputOne, inputTwo, inputThree := spacesplit[0], spacesplit[1], spacesplit[2]
+			inputOne = spacesplit[0]
+			inputTwo = spacesplit[1]
+		}
+  		if SpaceSplitLength == 3 {
+			inputOne = spacesplit[0]
+			inputTwo = spacesplit[1]
+			inputThree = spacesplit[2]
 		}
 		*/
 
@@ -221,6 +228,10 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 }
 
 func randomcase() string {
+	var who string = ""
+	var where string = ""
+	var doing string = ""
+
 	name := []string{
 		"殺蛙",
 		"陳冠宇",
@@ -259,9 +270,9 @@ func randomcase() string {
 		"比賽挖鼻屎",
 	}
 	rand.Seed(time.Now().UnixNano())
-	var who string = name[rand.Intn(len(name))]
-	var where string = place[rand.Intn(len(place))]
-	var doing string = thing[rand.Intn(len(thing))]
+	who = name[rand.Intn(len(name))]
+	where = place[rand.Intn(len(place))]
+	doing = thing[rand.Intn(len(thing))]
 
 	var result string =	strings.Join([]string{who, where, doing}, " ")
 
