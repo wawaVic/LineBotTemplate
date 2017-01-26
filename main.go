@@ -70,7 +70,7 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 	var Kai string = "啾啾"
 	var Lee string = "李志乾"
 	var Hector string = "頂超"
-	var Neal string = "賴博彩"
+	var Neal string = "賴柏采"
 	var Cat string = "小貓咪"
 	var Alvin string = "張銘仁"
 
@@ -136,8 +136,6 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 		}
         //亂數區end
 
-
-
 		if reflect.DeepEqual(UserMessage, Hello) {
 			BotMessage = "大家好阿，我是民間小精靈，你們這些小GG"
 		}
@@ -166,7 +164,7 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 			BotMessage = "南港欺負粉粉大哥"
 		}
 		if reflect.DeepEqual(UserMessage, Lee) {
-			BotMessage = "天母"
+			BotMessage = "天母大白鯊"
 		}
 		if reflect.DeepEqual(UserMessage, Hector) {
 			BotMessage = "北投癡漢"
@@ -245,7 +243,7 @@ func randomcase() string {
 		"在公司開重要會議時",
 		"在暗戀的女生的房間",
 		"在丁丁房間",
-		"召換峽谷",
+		"在召換峽谷",
 	}
 	thing := []string{
 		"放鞭炮",
