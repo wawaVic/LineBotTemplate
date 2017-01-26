@@ -55,8 +55,8 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 	var BotMessage string
 	var GoogleKey string = "google"
 	var YoutubeKey string = "youtube"
-	//var SearchLength int
-	//var RandomLength int
+	var SearchLength int
+	var RandomLength int
 	var SpaceSplitLength int
 	var Hello string = "打招呼"
 	var Weak string = "嫩啦"
@@ -67,20 +67,19 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 	var Benson string = "陳冠宇"
 	var Drew string = "彥竹"
 	var Ziv string = "七七"
-	//var Kai string = "啾啾"
+	var Kai string = "啾啾"
 	//var Lee string = "李志乾"
 	//var Hector string = "頂超"
 	//var Neal string = "賴博彩"
 	//var Cat string = "小貓咪"
 	//var Alvin string = "張銘仁"
 
-	var inputOne string = ""
-	var inputTwo string = ""
-	var inputThree string = ""
+	//var inputOne string = ""
+	//var inputTwo string = ""
+	//var inputThree string = ""
 	var WhoKey string = "誰"
 	var WhereKey string = "哪裡"
 	var DoingKey string = "在幹嘛"
-
 
 	for _, event := range events {
 		if event.Type == linebot.EventTypeMessage {
@@ -90,29 +89,28 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
             	MultiMessage = message.Text
 			}
 		}
-
+		/*好難弄
 		//輸入以空白隔開字串
 		spacesplit := strings.Split(MultiMessage, " ")
 		SpaceSplitLength = len(spacesplit)
   		if SpaceSplitLength > 1 {
 			inputOne, inputTwo, inputThree := spacesplit[0], spacesplit[1], spacesplit[2]
 		}
-
-
+		*/
 
         //搜尋區
-		//ifsearch := strings.Split(MultiMessage, " ")
-		//SearchLength = len(ifsearch)
-  		//if SearchLength == 2 {
-		//	engine, SearchFor := ifsearch[0], ifsearch[1]
-			inputOne = strings.ToLower(inputOne)
-			if reflect.DeepEqual(inputOne, GoogleKey) {
-				BotMessage = "Google搜尋結果：\n https://www.google.com.tw/#q=" + inputTwo
+		ifsearch := strings.Split(MultiMessage, " ")
+		SearchLength = len(ifsearch)
+  		if SearchLength == 2 {
+			engine, SearchFor := ifsearch[0], ifsearch[1]
+			engine = strings.ToLower(engine)
+			if reflect.DeepEqual(engine, GoogleKey) {
+				BotMessage = "Google搜尋結果：\n https://www.google.com.tw/#q=" + SearchFor
 			}
-			if reflect.DeepEqual(inputOne, YoutubeKey) {
-				BotMessage = "Youtube搜尋結果：\n https://www.youtube.com/results?search_query=" + inputTwo
+			if reflect.DeepEqual(engine, YoutubeKey) {
+				BotMessage = "Youtube搜尋結果：\n https://www.youtube.com/results?search_query=" + SearchFor
 			}
-		//}
+		}
         //搜尋區end
 
         //亂數區
@@ -121,16 +119,16 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 			BotMessage = randomcase()
 		}
 		*/
-		//ifrandom := strings.Split(MultiMessage, " ")
-		//RandomLength = len(ifrandom)
-  		//if RandomLength == 3 {
-		//	who, where, doing := ifrandom[0], ifrandom[1], ifrandom[2]
+		ifrandom := strings.Split(MultiMessage, " ")
+		RandomLength = len(ifrandom)
+  		if RandomLength == 3 {
+		who, where, doing := ifrandom[0], ifrandom[1], ifrandom[2]
 //			if reflect.DeepEqual(who, WhoKey); reflect.DeepEqual(where, WhereKey); reflect.DeepEqual(doing, DoingKey) {
 //				BotMessage = randomcase()
 //			}
-			if reflect.DeepEqual(inputOne, WhoKey) {
-				if reflect.DeepEqual(inputTwo, WhereKey) {
-					if reflect.DeepEqual(inputThree, DoingKey) {
+			if reflect.DeepEqual(who, WhoKey) {
+				if reflect.DeepEqual(where, WhereKey) {
+					if reflect.DeepEqual(doing, DoingKey) {
     					BotMessage = randomcase()
 					}
 				}
@@ -163,6 +161,9 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 		}
 		if reflect.DeepEqual(UserMessage, Ziv) {
 			BotMessage = "龜山嫩啦NPC"
+		}
+		if reflect.DeepEqual(UserMessage, Kai) {
+			BotMessage = "南港欺負粉粉大哥"
 		}
 
 /*關閉
