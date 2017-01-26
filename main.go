@@ -122,7 +122,7 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 
         //亂數區
 		if reflect.DeepEqual(UserMessage, Who) {
-			BotMessage = randomcase
+			BotMessage = randomcase()
 		}
 
 
