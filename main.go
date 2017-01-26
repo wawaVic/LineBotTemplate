@@ -91,7 +91,7 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 		//輸入以空白隔開字串
 		spacesplit := strings.Split(MultiMessage, " ")
 		SpaceSplitLength = len(spacesplit)
-  		if SearchLength > 1 {
+  		if SpaceSplitLength > 1 {
 			inputOne, inputTwo, inputThree := spacesplit[0], spacesplit[1], spacesplit[2]
 		}
 
