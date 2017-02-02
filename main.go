@@ -62,7 +62,8 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 	var Weak string = "嫩啦"
 	var Wantpapapa string = "我像大砲"
 	var Baby string = "媽寶"
-	
+	var ChineseNewYear string = "拜年"
+
 	var Vic string = "殺蛙"
 	var Benson string = "陳冠宇"
 	var Drew string = "彥竹"
@@ -143,17 +144,21 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 		}
         //亂數區end
 
+		//單詞回覆區
 		if reflect.DeepEqual(UserMessage, Hello) {
 			BotMessage = "大家好阿，我是民間小精靈，你們這些小GG"
 		}
 		if reflect.DeepEqual(UserMessage, Weak) {
-			BotMessage = "嫩"
+			BotMessage = randomWeak()
 		}
 		if reflect.DeepEqual(UserMessage, Wantpapapa) {
 			BotMessage = "他說OK沒問題"
 		}
 		if reflect.DeepEqual(UserMessage, Baby) {
 			BotMessage = "哭哭喔"
+		}
+		if reflect.DeepEqual(UserMessage, ChineseNewYear) {
+			BotMessage = "祝大家狗年行大運，旺旺旺旺！"
 		}
 		if reflect.DeepEqual(UserMessage, Vic) {
 			BotMessage = "樹林彭于晏!"
@@ -185,6 +190,7 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 		if reflect.DeepEqual(UserMessage, Alvin) {
 			BotMessage = "永和有永和路，中和也有永和路，中和有中和路，永和也有中和路；中和的中和路有接永和的中和路，永和的永和路沒接中和的永和路；永和的中和路有接永和的永和路，中和的永和路沒接中和的中和路。"
 		}
+		//單詞回覆區end
 
 /*關閉
 		//模式區
@@ -275,6 +281,22 @@ func randomcase() string {
 	doing = thing[rand.Intn(len(thing))]
 
 	var result string =	strings.Join([]string{who, where, doing}, " ")
+
+	return result
+}
+
+func randomWeak() string {
+	var result string =	""
+
+	weak := []string{
+		"嫩",
+		"女束ㄆ",
+		"嗨，肉腳，你們好阿",
+		"連我阿罵都比你還行",
+		"B嘴，廢物",
+	}
+	rand.Seed(time.Now().UnixNano())
+	result = weak[rand.Intn(len(weak))]
 
 	return result
 }
