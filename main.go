@@ -155,7 +155,7 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 			BotMessage = "他說OK沒問題"
 		}
 		if reflect.DeepEqual(UserMessage, Baby) {
-			BotMessage = "哭哭喔"
+			BotMessage = randomSingle("baby")
 		}
 		if reflect.DeepEqual(UserMessage, ChineseNewYear) {
 			BotMessage = "祝大家狗年行大運，旺旺旺旺！"
@@ -290,15 +290,26 @@ func randomSingle(Keyword string) string {
 
 	weak := []string{
 		"嫩",
+		"嫩啦",
 		"女束ㄆ",
 		"嗨，肉腳，你們好阿",
 		"連我阿罵都比你還行",
 		"B嘴，廢物",
 	}
+	baby := []string{
+		"哭哭喔",
+		"只會叫JG",
+		"讀私立喔",
+		"媽寶上路",
+	}
+
 	rand.Seed(time.Now().UnixNano())
 
 	if reflect.DeepEqual(Keyword, "weak") {
 		result = weak[rand.Intn(len(weak))]
+	}
+	if reflect.DeepEqual(Keyword, "baby") {
+		result = baby[rand.Intn(len(baby))]
 	}
 
 	return result
