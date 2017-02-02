@@ -64,6 +64,7 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 	var Baby string = "媽寶"
 	var ChineseNewYear string = "拜年"
 	var Crazyck string = "ck101"
+	var LINEBotName string = "精靈"
 
 	var Vic string = "殺蛙"
 	var Benson string = "陳冠宇"
@@ -196,6 +197,9 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 		//關鍵字包含區
 		if strings.Contains(UserMessage, Crazyck) {
 			BotMessage = "卡提諾狂新聞上線囉！"
+		}
+		if strings.Contains(UserMessage, LINEBotName) {
+			BotMessage = "誰cue偶？"
 		}
 		//關鍵字包含區end
 
