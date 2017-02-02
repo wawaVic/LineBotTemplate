@@ -285,7 +285,7 @@ func randomcase() string {
 	return result
 }
 
-func randomSingle(Keyword String) string {
+func randomSingle(Keyword string) string {
 	var result string =	""
 
 	weak := []string{
