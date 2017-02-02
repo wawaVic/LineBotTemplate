@@ -63,6 +63,7 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 	var Wantpapapa string = "我像大砲"
 	var Baby string = "媽寶"
 	var ChineseNewYear string = "拜年"
+	var Crazyck string = "ck101"
 
 	var Vic string = "殺蛙"
 	var Benson string = "陳冠宇"
@@ -191,6 +192,12 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 			BotMessage = "永和有永和路，中和也有永和路，中和有中和路，永和也有中和路；中和的中和路有接永和的中和路，永和的永和路沒接中和的永和路；永和的中和路有接永和的永和路，中和的永和路沒接中和的中和路。"
 		}
 		//單詞回覆區end
+
+		//關鍵字包含區
+		if strings.Contains(UserMessage, Crazyck) {
+			BotMessage = "卡提諾狂新聞上線囉！"
+		}
+		//關鍵字包含區end
 
 /*關閉
 		//模式區
