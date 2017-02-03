@@ -349,6 +349,7 @@ func randomSingle(Keyword string) string {
 
 //猜拳遊戲 石頭3 剪刀2 布1
 func FingersGame(Challenger string) string {
+	PlayFingers := []string{"剪刀刀","石頭頭","布布"}
 	var Stone string = "石頭頭"
 	var Scissor string = "剪刀刀"
 	var Paper string = "布布"
