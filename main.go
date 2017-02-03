@@ -65,6 +65,7 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 	var ChineseNewYear string = "拜年"
 	var Crazyck string = "ck101"
 	var LINEBotName string = "精靈"
+	var UpdateInfo string = "?"
 
 	var Vic string = "殺蛙"
 	var Benson string = "陳冠宇"
@@ -147,6 +148,15 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
         //亂數區end
 
 		//單詞回覆區
+		if reflect.DeepEqual(UserMessage, UpdateInfo) {
+			BotMessage = "目前版本：V1.0.1\n
+							更新日期：2017.02.03\n
+							更新內容：\n
+							1.新增\"更新資訊\"功能\n
+							2.嫩啦與媽寶擁有了更多詞彙\n
+							3.加入2個秘密關鍵字
+							"
+		}
 		if reflect.DeepEqual(UserMessage, Hello) {
 			BotMessage = "大家好阿，我是民間小精靈，你們這些小GG"
 		}
