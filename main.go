@@ -149,11 +149,11 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 
 		//單詞回覆區
 		if reflect.DeepEqual(UserMessage, UpdateInfo) {
-			BotMessage = "目前版本：V1.0.1\n
-							更新日期：2017.02.03\n
-							更新內容：\n
-							1.新增\"更新資訊\"功能\n
-							2.嫩啦與媽寶擁有了更多詞彙\n
+			BotMessage = "目前版本：V1.1.1 \n
+							更新日期：2017.02.03 \n
+							更新內容： \n
+							1.新增[更新資訊]功能 \n
+							2.嫩啦與媽寶擁有了更多詞彙 \n
 							3.加入2個秘密關鍵字
 							"
 		}
@@ -321,7 +321,7 @@ func randomSingle(Keyword string) string {
 		"哭哭喔",
 		"只會叫JG",
 		"讀私立喔",
-		"媽寶上路",
+		"媽寶喔",
 	}
 
 	rand.Seed(time.Now().UnixNano())
