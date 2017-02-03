@@ -116,7 +116,7 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 			engine, SearchFor := ifsearch[0], ifsearch[1]
 			engine = strings.ToLower(engine)
 			if reflect.DeepEqual(engine, GoogleKey) {
-				BotMessage = "Google搜尋結果：\n https://www.google.com.tw/#q=" + SearchFor
+				BotMessage = "Google搜尋結果：\n" + "https://www.google.com.tw/#q=" + SearchFor
 			}
 			if reflect.DeepEqual(engine, YoutubeKey) {
 				BotMessage = "Youtube搜尋結果：\n https://www.youtube.com/results?search_query=" + SearchFor
@@ -149,7 +149,12 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 
 		//單詞回覆區
 		if reflect.DeepEqual(UserMessage, UpdateInfo) {
-			BotMessage = "目前版本：V1.1.1 \n 更新日期：2017.02.03 \n 更新內容： \n 1.新增[更新資訊]功能 \n 2.嫩啦與媽寶擁有了更多詞彙 \n 3.加入2個秘密關鍵字"
+			BotMessage = "目前版本：V1.1.1 \n" +
+						 "更新日期：2017.02.03 \n" +
+						 "更新內容： \n" +
+						 "1.新增[更新資訊]功能 \n" +
+						 "2.嫩啦與媽寶擁有了更多詞彙 \n" +
+						 "3.加入2個秘密關鍵字"
 		}
 		if reflect.DeepEqual(UserMessage, Hello) {
 			BotMessage = "大家好阿，我是民間小精靈，你們這些小GG"
