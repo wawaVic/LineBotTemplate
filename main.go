@@ -84,7 +84,7 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 	var WhoKey string = "誰"
 	var WhereKey string = "哪裡"
 	var DoingKey string = "在幹嘛"
-	var PlayFinger []string = {"剪刀","石頭","布"}
+	PlayFingers := []string{"剪刀","石頭","布"}
 
 	for _, event := range events {
 		if event.Type == linebot.EventTypeMessage {
@@ -150,7 +150,7 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 
 
 
-		for _, Finger := range PlayFinger {
+		for _, Finger := range PlayFingers {
 			if reflect.DeepEqual(UserMessage, Finger) {
 			BotMessage = FingersGame(Finger)
 			}
