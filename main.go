@@ -349,9 +349,9 @@ func randomSingle(Keyword string) string {
 
 
 func FingersGame(Challenger string) string {
-	var Scissor string = "剪刀"
-	var Stone string = "石頭"
-	var Paper string = "布"
+	//var Scissor string = "剪刀"
+	//var Stone string = "石頭"
+	//var Paper string = "布"
 	var result string =	"test"
 
 
