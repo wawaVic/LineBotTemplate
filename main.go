@@ -65,7 +65,7 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 	var ChineseNewYear string = "拜年"
 	var Crazyck string = "ck101"
 	var LINEBotName string = "精靈"
-	var UpdateInfo string = "?"
+	var UpdateInfo string = "/?"
 
 	var Vic string = "殺蛙"
 	var Benson string = "陳冠宇"
