@@ -382,9 +382,9 @@ func FingersGame(Challenger string) string {
 		BotValue = 1
 	}
 
-	if (BotValue == 3 &&  ChallengerValue = 2) || (BotValue == 2 &&  ChallengerValue = 1) || (BotValue == 1 &&  ChallengerValue = 3){
+	if (BotValue == 3 && ChallengerValue == 2) || (BotValue == 2 && ChallengerValue == 1) || (BotValue == 1 && ChallengerValue == 3){
 		result = "我出" + Bot + "，嫩啦！"
-	} else if (ChallengerValue == 3 &&  BotValue = 2) || (ChallengerValue == 2 &&  BotValue = 1) || (ChallengerValue == 1 &&  BotValue = 3){
+	} else if (ChallengerValue == 3 &&  BotValue == 2) || (ChallengerValue == 2 &&  BotValue == 1) || (ChallengerValue == 1 &&  BotValue == 3){
 		result = "我出" + Bot + "，你厲害，最棒最棒！"
 	} else if BotValue == ChallengerValue {
 		result = "我出" + Bot + "，在來啊！"
