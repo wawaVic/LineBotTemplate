@@ -84,7 +84,7 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 	var WhoKey string = "誰"
 	var WhereKey string = "哪裡"
 	var DoingKey string = "在幹嘛"
-	PlayFingers := []string{"剪刀刀","石頭頭","布布"}
+	PlayFingers := []string{"剪刀","石頭","布"}
 
 	for _, event := range events {
 		if event.Type == linebot.EventTypeMessage {
@@ -148,25 +148,23 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 		}
         //亂數區end
 
-
-
+		//猜拳區
 		for _, Finger := range PlayFingers {
 			if reflect.DeepEqual(UserMessage, Finger) {
 			BotMessage = FingersGame(Finger)
 			}
 		}
-
-
-
+		//猜拳區end
 
 		//單詞回覆區
 		if reflect.DeepEqual(UserMessage, UpdateInfo) {
-			BotMessage = "目前版本：V1.1.1 \n" +
-						 "更新日期：2017.02.03 \n" +
+			BotMessage = "目前版本：V1.2.0 \n" +
+						 "更新日期：2017.02.04 \n" +
 						 "更新內容： \n" +
-						 "1.新增[更新資訊]功能 \n" +
-						 "2.嫩啦與媽寶擁有了更多詞彙 \n" +
-						 "3.加入2個秘密關鍵字"
+						 "1.可以與民間小精靈猜拳了！"
+						 //"1.可以與民間小精靈猜拳了！ \n" +
+						 //"2.嫩啦與媽寶擁有了更多詞彙 \n" +
+						 //"3.加入2個秘密關鍵字"
 		}
 		if reflect.DeepEqual(UserMessage, Hello) {
 			BotMessage = "大家好阿，我是民間小精靈，你們這些小GG"
@@ -349,16 +347,16 @@ func randomSingle(Keyword string) string {
 
 //猜拳遊戲 石頭3 剪刀2 布1
 func FingersGame(Challenger string) string {
-	PlayFingers := []string{"剪刀刀","石頭頭","布布"}
-	var Stone string = "石頭頭"
-	var Scissor string = "剪刀刀"
-	var Paper string = "布布"
+	PlayFingers := []string{"剪刀","石頭","布"}
+	var Stone string = "石頭"
+	var Scissor string = "剪刀"
+	var Paper string = "布"
 	var ChallengerValue int
 	var Bot string
 	var BotValue int
-	var result string =	"test"
+	var result string =	""
 
-	//定義使用者出拳
+	//定義使用者出拳數值
 	if reflect.DeepEqual(Challenger, Stone) {
 		ChallengerValue = 3
 	}
@@ -369,10 +367,11 @@ func FingersGame(Challenger string) string {
 		ChallengerValue = 1
 	}
 
-
+	//BOT出拳
     rand.Seed(time.Now().UnixNano())
 	Bot = PlayFingers[rand.Intn(len(PlayFingers))]
 
+	//定義BOT出拳數值
 	if reflect.DeepEqual(Bot, Stone) {
 		BotValue = 3
 	}
@@ -384,11 +383,11 @@ func FingersGame(Challenger string) string {
 	}
 
 	if (BotValue == 3 && ChallengerValue == 2) || (BotValue == 2 && ChallengerValue == 1) || (BotValue == 1 && ChallengerValue == 3){
-		result = "我出" + Bot + "，嫩啦！"
+		result = "我出" + Bot + "，嫩"
 	} else if (ChallengerValue == 3 &&  BotValue == 2) || (ChallengerValue == 2 &&  BotValue == 1) || (ChallengerValue == 1 &&  BotValue == 3){
-		result = "我出" + Bot + "，你厲害，最棒最棒！"
+		result = "我出" + Bot + "，你厲害，最棒最棒"
 	} else if BotValue == ChallengerValue {
-		result = "我出" + Bot + "，在來啊！"
+		result = "我也出" + Bot + "，再來啊！"
 	} else {
 		result = "猜拳機壞掉了，KUKU"
 	}
