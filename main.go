@@ -84,7 +84,7 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 	var WhoKey string = "誰"
 	var WhereKey string = "哪裡"
 	var DoingKey string = "在幹嘛"
-	PlayFingers := []string{"剪刀","石頭","布"}
+	PlayFingers := []string{"剪刀刀","石頭頭","布布"}
 
 	for _, event := range events {
 		if event.Type == linebot.EventTypeMessage {
@@ -347,14 +347,50 @@ func randomSingle(Keyword string) string {
 	return result
 }
 
-
+//猜拳遊戲 石頭3 剪刀2 布1
 func FingersGame(Challenger string) string {
-	//var Scissor string = "剪刀"
-	//var Stone string = "石頭"
-	//var Paper string = "布"
+	var Stone string = "石頭頭"
+	var Scissor string = "剪刀刀"
+	var Paper string = "布布"
+	var ChallengerValue int
+	var Bot string
+	var BotValue int
 	var result string =	"test"
 
+	//定義使用者出拳
+	if reflect.DeepEqual(Challenger, Stone) {
+		ChallengerValue = 3
+	}
+	if reflect.DeepEqual(Challenger, Scissor) {
+		ChallengerValue = 2
+	}
+	if reflect.DeepEqual(Challenger, Paper) {
+		ChallengerValue = 1
+	}
 
+
+    rand.Seed(time.Now().UnixNano())
+	Bot = PlayFingers[rand.Intn(len(PlayFingers))]
+
+	if reflect.DeepEqual(Bot, Stone) {
+		BotValue = 3
+	}
+	if reflect.DeepEqual(Bot, Scissor) {
+		BotValue = 2
+	}
+	if reflect.DeepEqual(Bot, Paper) {
+		BotValue = 1
+	}
+
+	if (BotValue == 3 &&  ChallengerValue = 2) || (BotValue == 2 &&  ChallengerValue = 1) || (BotValue == 1 &&  ChallengerValue = 3){
+		result = "我出" + Bot + "，嫩啦！"
+	} else if (ChallengerValue == 3 &&  BotValue = 2) || (ChallengerValue == 2 &&  BotValue = 1) || (ChallengerValue == 1 &&  BotValue = 3){
+		result = "我出" + Bot + "，你厲害，最棒最棒！"
+	} else if BotValue == ChallengerValue {
+		result = "我出" + Bot + "，在來啊！"
+	} else {
+		result = "猜拳機壞掉了，KUKU"
+	}
 
 	return result
 }
