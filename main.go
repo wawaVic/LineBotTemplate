@@ -84,6 +84,7 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 	var WhoKey string = "誰"
 	var WhereKey string = "哪裡"
 	var DoingKey string = "在幹嘛"
+	var PlayFinger []string = {"剪刀","石頭","布"}
 
 	for _, event := range events {
 		if event.Type == linebot.EventTypeMessage {
@@ -146,6 +147,17 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 			}
 		}
         //亂數區end
+
+
+
+		for _, Finger := range PlayFinger {
+			if reflect.DeepEqual(UserMessage, Finger) {
+			BotMessage = FingersGame(Finger)
+			}
+		}
+
+
+
 
 		//單詞回覆區
 		if reflect.DeepEqual(UserMessage, UpdateInfo) {
@@ -331,6 +343,18 @@ func randomSingle(Keyword string) string {
 	if reflect.DeepEqual(Keyword, "baby") {
 		result = baby[rand.Intn(len(baby))]
 	}
+
+	return result
+}
+
+
+func FingersGame(Challenger string) string {
+	var Scissor string = "剪刀"
+	var Stone string = "石頭"
+	var Paper string = "布"
+	var result string =	"test"
+
+
 
 	return result
 }
