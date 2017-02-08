@@ -65,6 +65,7 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 	var ChineseNewYear string = "拜年"
 	var Crazyck string = "ck101"
 	var LINEBotName string = "精靈"
+	var TheCopperKey string = "頭目萬歲"
 	var UpdateInfo string = "/?"
 
 	var Vic string = "殺蛙"
@@ -158,10 +159,11 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 
 		//單詞回覆區
 		if reflect.DeepEqual(UserMessage, UpdateInfo) {
-			BotMessage = "目前版本：V1.2.0 \n" +
-						 "更新日期：2017.02.04 \n" +
+			BotMessage = "目前版本：V1.2.1 \n" +
+						 "更新日期：2017.02.08 \n" +
 						 "更新內容： \n" +
-						 "1.可以與民間小精靈猜拳了！"
+						 "1.小精靈銅鑰匙開賣啦！"
+						 //"1.可以與民間小精靈猜拳了！"
 						 //"1.可以與民間小精靈猜拳了！ \n" +
 						 //"2.嫩啦與媽寶擁有了更多詞彙 \n" +
 						 //"3.加入2個秘密關鍵字"
@@ -219,6 +221,9 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 		}
 		if strings.Contains(UserMessage, LINEBotName) {
 			BotMessage = "誰cue偶？"
+		}
+		if strings.Contains(UserMessage, TheCopperKey) {
+			BotMessage = "獲得銅鑰匙(10)"
 		}
 		//關鍵字包含區end
 
