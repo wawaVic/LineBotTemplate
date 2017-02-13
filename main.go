@@ -55,6 +55,10 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 	var BotMessage string
 	var GoogleKey string = "google"
 	var YoutubeKey string = "youtube"
+	var SingerKey string = "歌手"
+	var AlbumeKey string = "專輯"
+	var SongTitleKey string = "歌名"
+	var LyricsKey string = "歌詞"
 	var SearchLength int
 	var RandomLength int
 	//var SpaceSplitLength int
@@ -122,6 +126,18 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 			}
 			if reflect.DeepEqual(engine, YoutubeKey) {
 				BotMessage = "Youtube搜尋結果：\n https://www.youtube.com/results?search_query=" + SearchFor
+			}
+			if reflect.DeepEqual(engine, SingerKey) {
+				BotMessage = "魔鏡歌詞網搜尋結果：\n https://mojim.com/" + SearchFor + ".html?t1"
+			}
+			if reflect.DeepEqual(engine, AlbumeKey) {
+				BotMessage = "魔鏡歌詞網搜尋結果：\n https://mojim.com/" + SearchFor + ".html?t2"
+			}
+			if reflect.DeepEqual(engine, SongTitleKey) {
+				BotMessage = "魔鏡歌詞網搜尋結果：\n https://mojim.com/" + SearchFor + ".html?t3"
+			}
+			if reflect.DeepEqual(engine, LyricsKey) {
+				BotMessage = "魔鏡歌詞網搜尋結果：\n https://mojim.com/" + SearchFor + ".html?t4"
 			}
 		}
         //搜尋區end
