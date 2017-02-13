@@ -267,6 +267,7 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 
 		//reply
 		if BotMessage != "" {
+			bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage(BotMessage_contain)).Do()
 			bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage(BotMessage)).Do()
 		}
 		if BotMessage_contain != "" {
