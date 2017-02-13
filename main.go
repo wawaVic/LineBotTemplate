@@ -175,10 +175,15 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 
 		//單詞回覆區
 		if reflect.DeepEqual(UserMessage, UpdateInfo) {
-			BotMessage = "目前版本：V1.2.1 \n" +
-						 "更新日期：2017.02.08 \n" +
+			BotMessage = "目前版本：V1.2.2 \n" +
+						 "更新日期：2017.02.13 \n" +
 						 "更新內容： \n" +
-						 "1.小精靈銅鑰匙開賣啦！"
+						 "1.可以搜尋歌詞，用法：\n" +
+						 "    歌手 蕭敬騰\n" +
+						 "    專輯 五月天\n" +
+						 "    歌名 易燃易爆炸\n" +
+						 "    歌詞 打開門就見山"
+						 //"1.小精靈銅鑰匙開賣啦！"
 						 //"1.可以與民間小精靈猜拳了！"
 						 //"1.可以與民間小精靈猜拳了！ \n" +
 						 //"2.嫩啦與媽寶擁有了更多詞彙 \n" +
