@@ -235,6 +235,9 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 		if reflect.DeepEqual(UserMessage, Alvin) {
 			BotMessage = "永和有永和路，中和也有永和路，中和有中和路，永和也有中和路；中和的中和路有接永和的中和路，永和的永和路沒接中和的永和路；永和的中和路有接永和的永和路，中和的永和路沒接中和的中和路。"
 		}
+		if reflect.DeepEqual(UserMessage, TheCopperKey) {
+			BotMessage = "獲得銅鑰匙(10)"
+		}
 		//單詞回覆區end
 
 		//關鍵字包含區
@@ -243,9 +246,6 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 		}
 		if strings.Contains(UserMessage, LINEBotName) {
 			BotMessage_contain = "誰cue偶？"
-		}
-		if strings.Contains(UserMessage, TheCopperKey) {
-			BotMessage_contain = "獲得銅鑰匙(10)"
 		}
 		//關鍵字包含區end
 
