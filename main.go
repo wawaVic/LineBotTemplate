@@ -52,7 +52,7 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 
 	var UserMessage string
 	var MultiMessage string
-	var BotMessage string
+	var BotMessage, BotMessage_contain  string
 	var GoogleKey string = "google"
 	var YoutubeKey string = "youtube"
 	var SingerKey string = "歌手"
@@ -238,13 +238,13 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 
 		//關鍵字包含區
 		if strings.Contains(UserMessage, Crazyck) {
-			BotMessage = "卡提諾狂新聞上線囉！"
+			BotMessage_contain = "卡提諾狂新聞上線囉！"
 		}
 		if strings.Contains(UserMessage, LINEBotName) {
-			BotMessage = "誰cue偶？"
+			BotMessage_contain = "誰cue偶？"
 		}
 		if strings.Contains(UserMessage, TheCopperKey) {
-			BotMessage = "獲得銅鑰匙(10)"
+			BotMessage_contain = "獲得銅鑰匙(10)"
 		}
 		//關鍵字包含區end
 
@@ -267,8 +267,10 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 
 		//reply
 		if BotMessage != "" {
-//			bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage("mode: " + modestr + " Message: " + BotMessage + " UserMessage: " + UserMessage)).Do()
 			bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage(BotMessage)).Do()
+		}
+		if BotMessage_contain != "" {
+			bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage(BotMessage_contain)).Do()
 		}
 		//reply end
 //			bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage("Debug: " + UserMessage)).Do()
