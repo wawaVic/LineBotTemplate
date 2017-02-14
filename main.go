@@ -66,6 +66,7 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 	var Weak string = "嫩啦"
 	var Wantpapapa string = "我像大砲"
 	var Baby string = "媽寶"
+	var Weight string = "量體重"
 	var ChineseNewYear string = "拜年"
 	var Crazyck string = "ck101"
 	var LINEBotName string = "精靈"
@@ -175,10 +176,11 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 
 		//單詞回覆區
 		if reflect.DeepEqual(UserMessage, UpdateInfo) {
-			BotMessage = "目前版本：V1.3.1 \n" +
-						 "更新日期：2017.02.13 \n" +
+			BotMessage = "目前版本：V1.3.2 \n" +
+						 "更新日期：2017.02.14 \n" +
 						 "更新內容： \n" +
-						 "1.bug修正"
+						 "1.小精靈可以量體重啦，太神啦！"
+						 //"1.bug修正"
 						 //"1.可以搜尋歌詞，用法：\n" +
 						 ///"    歌手 蕭敬騰\n" +
 						 //"    專輯 五月天\n" +
@@ -201,6 +203,9 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 		}
 		if reflect.DeepEqual(UserMessage, Baby) {
 			BotMessage = randomSingle("baby")
+		}
+		if reflect.DeepEqual(UserMessage, Weight) {
+			BotMessage = "量體重功能已開啟，請單腳站立於手機上..."
 		}
 		if reflect.DeepEqual(UserMessage, ChineseNewYear) {
 			BotMessage = "祝大家狗年行大運，旺旺旺旺！"
