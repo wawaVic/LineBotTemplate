@@ -68,6 +68,7 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 	var Baby string = "媽寶"
 	var Weight string = "量體重"
 	var High string = "量身高"
+	var GGLong string = "量長度"
 	var ChineseNewYear string = "拜年"
 	var Crazyck string = "ck101"
 	var LINEBotName string = "精靈"
@@ -177,10 +178,11 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 
 		//單詞回覆區
 		if reflect.DeepEqual(UserMessage, UpdateInfo) {
-			BotMessage = "目前版本：V1.3.3 \n" +
-						 "更新日期：2017.02.15 \n" +
+			BotMessage = "目前版本：V1.3.4 \n" +
+						 "更新日期：2017.02.17 \n" +
 						 "更新內容： \n" +
-						 "1.小精靈可以幫你量身高跟體重了！"
+						 "1.千呼萬喚始出來，不知道自己多短的可以量長度了。"
+						 //"1.小精靈可以幫你量身高跟體重了！"
 						 //"1.bug修正"
 						 //"1.可以搜尋歌詞，用法：\n" +
 						 ///"    歌手 蕭敬騰\n" +
@@ -211,6 +213,9 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 		if reflect.DeepEqual(UserMessage, High) {
 			BotMessage = "量身高功能已開啟，請將手機置於頭頂並抬頭挺胸維持30秒..."
 		}
+		if reflect.DeepEqual(UserMessage, GGLong) {
+			BotMessage = "量長度功能已開啟，請將手機與GG緊密貼合，並維持Pocky狀態30秒...，"
+		}
 		if reflect.DeepEqual(UserMessage, ChineseNewYear) {
 			BotMessage = "祝大家狗年行大運，旺旺旺旺！"
 		}
@@ -224,7 +229,7 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 			BotMessage = "臺中送粽雞"
 		}
 		if reflect.DeepEqual(UserMessage, Ziv) {
-			BotMessage = "龜山嫩啦NPC"
+			BotMessage = "龜山八七"
 		}
 		if reflect.DeepEqual(UserMessage, Kai) {
 			BotMessage = "南港欺負粉粉大哥"
