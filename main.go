@@ -214,7 +214,7 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 			BotMessage = "量身高功能已開啟，請將手機置於頭頂並抬頭挺胸維持30秒..."
 		}
 		if reflect.DeepEqual(UserMessage, GGLong) {
-			BotMessage = "量長度功能已開啟，請將手機與GG緊密貼合，並維持Pocky狀態30秒...，"
+			BotMessage = "量長度功能已開啟，請將手機與GG緊密貼合，並維持Pocky狀態30秒..."
 		}
 		if reflect.DeepEqual(UserMessage, ChineseNewYear) {
 			BotMessage = "祝大家狗年行大運，旺旺旺旺！"
