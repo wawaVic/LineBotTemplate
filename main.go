@@ -93,6 +93,7 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 	var WhereKey string = "哪裡"
 	var DoingKey string = "在幹嘛"
 	PlayFingers := []string{"剪刀","石頭","布"}
+	GoodJob := []string{"棒","厲害","太猛","負責","了不起"}
 
 	for _, event := range events {
 		if event.Type == linebot.EventTypeMessage {
@@ -261,6 +262,11 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 		if strings.Contains(UserMessage, LINEBotName) {
 			BotMessage_contain = "誰cue偶？"
 		}
+        for i := 0; i < 6; i++ {
+			if strings.Contains(UserMessage, GoodJob[i]) {
+				BotMessage_contain = "了不起，負責！"
+			}
+    	}
 		//關鍵字包含區end
 
 /*關閉
