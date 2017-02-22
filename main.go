@@ -93,7 +93,7 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 	var WhereKey string = "哪裡"
 	var DoingKey string = "在幹嘛"
 	PlayFingers := []string{"剪刀","石頭","布"}
-	GoodJob := []string{"棒","厲害","太猛","負責","了不起"}
+	GoodJob := []string{"棒","厲害","猛","負責","了不起","強","佩服"}
 
 	for _, event := range events {
 		if event.Type == linebot.EventTypeMessage {
@@ -179,10 +179,11 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 
 		//單詞回覆區
 		if reflect.DeepEqual(UserMessage, UpdateInfo) {
-			BotMessage = "目前版本：V1.3.4 \n" +
-						 "更新日期：2017.02.17 \n" +
+			BotMessage = "目前版本：V1.3.5 \n" +
+						 "更新日期：2017.02.22 \n" +
 						 "更新內容： \n" +
-						 "1.千呼萬喚始出來，不知道自己多短的可以量長度了。"
+						 "1.了不起，負責！"
+						 //"1.千呼萬喚始出來，不知道自己多短的可以量長度了。"
 						 //"1.小精靈可以幫你量身高跟體重了！"
 						 //"1.bug修正"
 						 //"1.可以搜尋歌詞，用法：\n" +
@@ -262,7 +263,7 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 		if strings.Contains(UserMessage, LINEBotName) {
 			BotMessage_contain = "誰cue偶？"
 		}
-        for i := 0; i < 5; i++ {
+        for i := 0; i < 7; i++ {
 			if strings.Contains(UserMessage, GoodJob[i]) {
 				BotMessage_contain = "了不起，負責！"
 			}
