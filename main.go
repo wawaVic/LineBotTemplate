@@ -262,7 +262,7 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 		if strings.Contains(UserMessage, LINEBotName) {
 			BotMessage_contain = "誰cue偶？"
 		}
-        for i := 0; i < 6; i++ {
+        for i := 0; i < 5; i++ {
 			if strings.Contains(UserMessage, GoodJob[i]) {
 				BotMessage_contain = "了不起，負責！"
 			}
