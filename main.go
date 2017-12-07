@@ -397,6 +397,7 @@ func randomSingle(Keyword string) string {
 	}
 	Tonguelist := []string{
 		"光芒萬丈的官方網站綻放出萬丈光芒",
+		"南港展覽館館長掌管的觀光官方網站",
 		"抱著灰雞上飛機，飛機起飛，灰雞要飛。",
 		"非揮發性化學花卉肥料",
 		"媽媽騎馬馬慢媽媽罵馬",
