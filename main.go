@@ -413,7 +413,7 @@ func randomSingle(Keyword string) string {
 		result = baby[rand.Intn(len(baby))]
 	}
 	if reflect.DeepEqual(Keyword, "Tongue") {
-		result = Tonguelist[rand.Intn(len(Tongue))]
+		result = Tonguelist[rand.Intn(len(Tonguelist))]
 	}
 
 	return result
