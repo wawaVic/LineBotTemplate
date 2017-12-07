@@ -85,6 +85,8 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 	var Neal string = "賴柏采"
 	var Cat string = "小貓咪"
 	var Alvin string = "張銘仁"
+	var Tongue string = "繞口令"
+
 
 	//var inputOne string = ""
 	//var inputTwo string = ""
@@ -147,6 +149,7 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
         //搜尋區end
 
         //亂數區
+        //誰哪裡在幹嘛start
         /*
 		if reflect.DeepEqual(UserMessage, WhoKey) {
 			BotMessage = randomcase()
@@ -167,6 +170,8 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 				}
 			}
 		}
+		//誰哪裡在幹嘛end
+
         //亂數區end
 
 		//猜拳區
@@ -179,10 +184,13 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 
 		//單詞回覆區
 		if reflect.DeepEqual(UserMessage, UpdateInfo) {
-			BotMessage = "目前版本：V1.3.5 \n" +
-						 "更新日期：2017.02.22 \n" +
+			BotMessage = "目前版本：V1.3.6 \n" +
+						 "更新日期：2017.12.07 \n" +
 						 "更新內容： \n" +
-						 "1.了不起，負責！"
+						 "1.精靈有繞口令"
+						 //"更新日期：2017.02.22 \n" +
+						 //"更新內容： \n" +
+						 //"1.了不起，負責！"
 						 //"1.千呼萬喚始出來，不知道自己多短的可以量長度了。"
 						 //"1.小精靈可以幫你量身高跟體重了！"
 						 //"1.bug修正"
@@ -254,6 +262,11 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 		if reflect.DeepEqual(UserMessage, TheCopperKey) {
 			BotMessage = "獲得銅鑰匙(10)"
 		}
+		if reflect.DeepEqual(UserMessage, Tongue) {
+			BotMessage = randomSingle("Tonguelist")
+		}
+
+
 		//單詞回覆區end
 
 		//關鍵字包含區
@@ -382,6 +395,14 @@ func randomSingle(Keyword string) string {
 		"讀私立喔",
 		"媽寶喔",
 	}
+	Tonguelist := []string{
+		"光芒萬丈的官方網站綻放出萬丈光芒",
+		"抱著灰雞上飛機，飛機起飛，灰雞要飛。",
+		"非揮發性化學花卉肥料",
+		"媽媽騎馬馬慢媽媽罵馬",
+		"紅鯉魚與綠鯉魚與驢",
+		"風吹藤動銅鈴響，風住藤定定銅鈴",
+	}
 
 	rand.Seed(time.Now().UnixNano())
 
@@ -390,6 +411,9 @@ func randomSingle(Keyword string) string {
 	}
 	if reflect.DeepEqual(Keyword, "baby") {
 		result = baby[rand.Intn(len(baby))]
+	}
+	if reflect.DeepEqual(Keyword, "Tongue") {
+		result = baby[rand.Intn(len(Tonguelist))]
 	}
 
 	return result
