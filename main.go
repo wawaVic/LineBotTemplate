@@ -263,7 +263,7 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 			BotMessage = "獲得銅鑰匙(10)"
 		}
 		if reflect.DeepEqual(UserMessage, Tongue) {
-			BotMessage = randomSingle("Tonguelist")
+			BotMessage = randomSingle("Tongue")
 		}
 
 
