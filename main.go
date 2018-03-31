@@ -73,7 +73,7 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 	var Crazyck string = "ck101"
 	var LINEBotName string = "精靈"
 	var TheCopperKey string = "頭目萬歲"
-	var UpdateInfo string = "/?"
+	var UpdateInfo string = "小精靈版本"
 
 	var Vic string = "殺蛙"
 	var Benson string = "陳冠宇"
