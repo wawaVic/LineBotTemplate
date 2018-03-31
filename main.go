@@ -184,10 +184,13 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 
 		//單詞回覆區
 		if reflect.DeepEqual(UserMessage, UpdateInfo) {
-			BotMessage = "目前版本：V1.3.6 \n" +
-						 "更新日期：2017.12.07 \n" +
+			BotMessage = "目前版本：V1.3.7 \n" +
+						 "更新日期：2018.03.31 \n" +
 						 "更新內容： \n" +
-						 "1.精靈有繞口令"
+						 "1.嫩、媽寶、繞口令改為Contains觸發，提升小精靈存在感。"
+						 //"更新日期：2017.12.07 \n" +
+						 //"更新內容： \n" +
+						 //"1.精靈有繞口令"
 						 //"更新日期：2017.02.22 \n" +
 						 //"更新內容： \n" +
 						 //"1.了不起，負責！"
@@ -210,9 +213,6 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 		}
 		if reflect.DeepEqual(UserMessage, Wantpapapa) {
 			BotMessage = "他說OK沒問題"
-		}
-		if reflect.DeepEqual(UserMessage, Baby) {
-			BotMessage = randomSingle("baby")
 		}
 		if reflect.DeepEqual(UserMessage, Weight) {
 			BotMessage = "量體重功能已開啟，請單腳站立於手機上..."
@@ -259,9 +259,6 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 		if reflect.DeepEqual(UserMessage, TheCopperKey) {
 			BotMessage = "獲得銅鑰匙(10)"
 		}
-		if reflect.DeepEqual(UserMessage, Tongue) {
-			BotMessage = randomSingle("Tongue")
-		}
 
 
 		//單詞回覆區end
@@ -275,6 +272,12 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 		}
 		if strings.Contains(UserMessage, Weak) {
 			BotMessage = randomSingle("weak")
+		}
+		if strings.Contains(UserMessage, Tongue) {
+			BotMessage = randomSingle("Tongue")
+		}
+		if strings.Contains(UserMessage, Baby) {
+			BotMessage = randomSingle("baby")
 		}
         for i := 0; i < 7; i++ {
 			if strings.Contains(UserMessage, GoodJob[i]) {
