@@ -63,7 +63,7 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 	var RandomLength int
 	//var SpaceSplitLength int
 	var Hello string = "打招呼"
-	var Weak string = "嫩啦"
+	var Weak string = "嫩"
 	var Wantpapapa string = "我像大砲"
 	var Baby string = "媽寶"
 	var Weight string = "量體重"
@@ -208,9 +208,6 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 		if reflect.DeepEqual(UserMessage, Hello) {
 			BotMessage = "大家好阿，我是民間小精靈，你們這些小GG"
 		}
-		if reflect.DeepEqual(UserMessage, Weak) {
-			BotMessage = randomSingle("weak")
-		}
 		if reflect.DeepEqual(UserMessage, Wantpapapa) {
 			BotMessage = "他說OK沒問題"
 		}
@@ -275,6 +272,9 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 		}
 		if strings.Contains(UserMessage, LINEBotName) {
 			BotMessage_contain = "誰cue偶？"
+		}
+		if strings.Contains(UserMessage, Weak) {
+			BotMessage = randomSingle("weak")
 		}
         for i := 0; i < 7; i++ {
 			if strings.Contains(UserMessage, GoodJob[i]) {
