@@ -91,7 +91,7 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 	//var NealID string = ""
 	//var CatID string = ""
 	//var AlvinID string = ""
-	//var engineeringRoomID string = ""
+	var engineeringGroupID string = "C8d72858c11b68975383505916fd4162a"
 	
 	
 
@@ -194,7 +194,9 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 					pushMsgID = VicID
 				} else if reflect.DeepEqual(ifsearch[1], Ziv) {
 					pushMsgID = ZivID
+				
 				} else {
+					pushMsgID = engineeringGroupID
 				}
 				
 				
@@ -223,7 +225,6 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 				//	pushMsgID = AlvinID
 				//}
 				//else {
-				//	pushMsgID = engineeringRoomID
 				//}
 				PushMessageTo(pushMsgID, pushMsg)
 			}
