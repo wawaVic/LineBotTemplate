@@ -52,6 +52,7 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 
 	var UserMessage string
 	var MultiMessage string
+	var UserID string
 	var BotMessage, BotMessage_contain  string
 	var GoogleKey string = "google"
 	var YoutubeKey string = "youtube"
@@ -74,6 +75,10 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 	var LINEBotName string = "精靈"
 	var TheCopperKey string = "頭目萬歲"
 	var UpdateInfo string = "小精靈版本"
+
+
+	var getMyID string = "我的ID"
+
 
 	var Vic string = "殺蛙"
 	var Benson string = "陳冠宇"
@@ -103,6 +108,7 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 			case *linebot.TextMessage:
             	UserMessage = message.Text
             	MultiMessage = message.Text
+				UserID = event.source.userId
 			}
 		}
 		/*好難弄
@@ -258,6 +264,10 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 		}
 		if reflect.DeepEqual(UserMessage, TheCopperKey) {
 			BotMessage = "獲得銅鑰匙(10)"
+		}
+
+		if reflect.DeepEqual(UserMessage, getMyID) {
+			BotMessage = UserID
 		}
 
 
