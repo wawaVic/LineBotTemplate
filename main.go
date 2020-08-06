@@ -76,9 +76,19 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 	var TheCopperKey string = "頭目萬歲"
 	var UpdateInfo string = "小精靈版本"
 
+	//var pushKey string = "說話"
 	var getMyID string = "我的ID0806"
-	//var wawaID = "U847173972bc441a349c0e82362d2929b"
+	//var VicID = "U847173972bc441a349c0e82362d2929b"
 	//var huaID = "U067447a742ea35c0e9fb6b130fecbef4"
+	//var BensonID string = ""
+	//var DrewID string = ""
+	//var ZivID string = ""
+	//var KaiID string = ""
+	//var LeeID string = ""
+	//var HectorID string = ""
+	//var NealID string = ""
+	//var CatID string = ""
+	//var AlvinID string = ""
 	
 	
 
@@ -167,6 +177,16 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 			}
 		}
         //搜尋區end
+		
+		//對特定對象說話區
+		//說話 殺蛙 忘記了姓名的請跟我來
+		//pushKey ID msg
+		if SearchLength == 3 {
+			if(reflect.DeepEqual(ifsearch[0], pushKey)){
+			}
+		}
+		//對特定對象說話區end
+		
 
         //亂數區
         //誰哪裡在幹嘛start
