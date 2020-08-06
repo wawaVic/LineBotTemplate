@@ -218,7 +218,7 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 				else {
 				//	pushMsgID = room
 				}
-				PushMessageTo(pushMsgID, pushMsg);
+				PushMessageTo(pushMsgID, pushMsg)
 			}
 		}
 		//對特定對象說話區end
