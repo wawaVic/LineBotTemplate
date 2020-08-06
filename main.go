@@ -183,37 +183,37 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 		//pushKey ID msg
 		if SearchLength == 3 {
 			if(reflect.DeepEqual(ifsearch[0], pushKey)){
-				var pushMsgID string = "";
-				var pushMsg string = ifsearch[2];
+				var pushMsgID string = ""
+				var pushMsg string = ifsearch[2]
 				if reflect.DeepEqual(ifsearch[1], Vic) {
-					pushMsgID = VicID;
+					pushMsgID = VicID
 				}
 				//else if reflect.DeepEqual(ifsearch[1], Benson) {
-				//	pushMsgID = BensonID;
+				//	pushMsgID = BensonID
 				//}
 				//else if reflect.DeepEqual(ifsearch[1], Drew) {
-				//	pushMsgID = DrewID;
+				//	pushMsgID = DrewID
 				//}
 				else if reflect.DeepEqual(ifsearch[1], Ziv) {
-					pushMsgID = ZivID;
+					pushMsgID = ZivID
 				}
 				//else if reflect.DeepEqual(ifsearch[1], Kai) {
-				//	pushMsgID = KaiID;
+				//	pushMsgID = KaiID
 				//}
 				//else if reflect.DeepEqual(ifsearch[1], Lee) {
-				//	pushMsgID = LeeID;
+				//	pushMsgID = LeeID
 				//}
 				//else if reflect.DeepEqual(ifsearch[1], Hector) {
-				//	pushMsgID = HectorID;
+				//	pushMsgID = HectorID
 				//}
 				//else if reflect.DeepEqual(ifsearch[1], Neal) {
-				//	pushMsgID = NealID;
+				//	pushMsgID = NealID
 				//}
 				//else if reflect.DeepEqual(ifsearch[1], Cat) {
-				//	pushMsgID = CatID;
+				//	pushMsgID = CatID
 				//}
 				//else if reflect.DeepEqual(ifsearch[1], Alvin) {
-				//	pushMsgID = AlvinID;
+				//	pushMsgID = AlvinID
 				//}
 				else {
 				//	pushMsgID = room
