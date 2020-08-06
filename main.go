@@ -215,6 +215,9 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 				//else if reflect.DeepEqual(ifsearch[1], Alvin) {
 				//	pushMsgID = AlvinID;
 				//}
+				else {
+				//	pushMsgID = room
+				}
 				PushMessageTo(pushMsgID, pushMsg);
 			}
 		}
