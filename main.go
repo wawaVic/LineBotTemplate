@@ -188,9 +188,9 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 				if reflect.DeepEqual(ifsearch[1], Vic) {
 					pushMsgID = VicID;
 				}
-				else if reflect.DeepEqual(ifsearch[1], Benson) {
-					pushMsgID = BensonID;
-				}
+				//else if reflect.DeepEqual(ifsearch[1], Benson) {
+				//	pushMsgID = BensonID;
+				//}
 				//else if reflect.DeepEqual(ifsearch[1], Drew) {
 				//	pushMsgID = DrewID;
 				//}
