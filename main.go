@@ -52,7 +52,6 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 
 	var UserMessage string
 	var MultiMessage string
-	var UserID string
 	var BotMessage, BotMessage_contain  string
 	var GoogleKey string = "google"
 	var YoutubeKey string = "youtube"
@@ -76,6 +75,8 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 	var TheCopperKey string = "頭目萬歲"
 	var UpdateInfo string = "小精靈版本"
 
+	var UserID string
+	var RoomID string
 	var pushKey string = "說話"
 	var getMyID string = "我的ID0806"
 	var VicID = "U847173972bc441a349c0e82362d2929b"
@@ -89,6 +90,7 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 	//var NealID string = ""
 	//var CatID string = ""
 	//var AlvinID string = ""
+	//var engineeringRoomID string = ""
 	
 	
 
@@ -121,6 +123,7 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
             	UserMessage = message.Text
             	MultiMessage = message.Text
 				UserID = event.Source.UserID
+				RoomID = event.Source.RoomID
 			}
 		}
 		
@@ -129,7 +132,7 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 		bot, err := linebot.New("213e05b7470af20c4808125943837ea0", "Ihhiy93EVZZTdP5RfzWA2LBR/ryHIj7Xt5ZuvHDeERIdaXKyLhMFR3o/tIzHRzCdoN+iszJGofBSUHIN904JJ1m1X+XgOXaAMH8dBmiAX7ZURXKwlIgZDLOZR7p4kuO5vjZZqGTrCy9Ni0QeV/DAqgdB04t89/1O/w1cDnyilFU=")
 		if err != nil {
 		}
-		if _, err := bot.PushMessage("U847173972bc441a349c0e82362d2929b", linebot.NewTextMessage(UserMessage + "\n" + UserID)).Do(); err != nil {
+		if _, err := bot.PushMessage("U847173972bc441a349c0e82362d2929b", linebot.NewTextMessage(UserMessage + "\n" + UserID + "\n room: " + RoomID )).Do(); err != nil {
 
 		}
 		
@@ -187,10 +190,14 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 				var pushMsg string = ifsearch[2]
 				if reflect.DeepEqual(ifsearch[1], Vic) {
 					pushMsgID = VicID
-				} else if reflect.DeepEqual(ifsearch[1], Ziv) {
+				} 
+				else if reflect.DeepEqual(ifsearch[1], Ziv) {
 					pushMsgID = ZivID
-				} else {
 				}
+				else {
+				}
+				
+				
 				//else if reflect.DeepEqual(ifsearch[1], Benson) {
 				//	pushMsgID = BensonID
 				//}
@@ -214,6 +221,9 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 				//}
 				//else if reflect.DeepEqual(ifsearch[1], Alvin) {
 				//	pushMsgID = AlvinID
+				//}
+				//else {
+				//	pushMsgID = engineeringRoomID
 				//}
 				PushMessageTo(pushMsgID, pushMsg)
 			}
