@@ -76,7 +76,7 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 	var UpdateInfo string = "小精靈版本"
 
 	var UserID string
-	var RoomID string
+	//var RoomID string
 	var GroupID string
 	var pushKey string = "說話"
 	var getMyID string = "我的ID0806"
@@ -124,7 +124,7 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
             	UserMessage = message.Text
             	MultiMessage = message.Text
 				UserID = event.Source.UserID
-				RoomID = event.Source.RoomID
+				//RoomID = event.Source.RoomID
 				GroupID = event.Source.GroupID
 			}
 		}
