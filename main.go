@@ -28,6 +28,38 @@ import (
 
 var bot *linebot.Client
 
+	var UserID string
+	//var RoomID string
+	var GroupID string
+	var pushKey string = "說話"
+	var getMyID string = "我的ID0806"
+	var VicID = "U847173972bc441a349c0e82362d2929b"
+	//var huaID = "U067447a742ea35c0e9fb6b130fecbef4"
+	//var BensonID string = ""
+	//var DrewID string = ""
+	var ZivID string = "Ud8c3fc8081078569ec484899938ef1af"
+	//var KaiID string = ""
+	//var LeeID string = ""
+	//var HectorID string = ""
+	//var NealID string = ""
+	//var CatID string = ""
+	//var AlvinID string = ""
+	var engineeringGroupID string = "C8d72858c11b68975383505916fd4162a"
+	
+	
+
+	var Vic string = "殺蛙"
+	var Benson string = "陳冠宇"
+	var Drew string = "彥竹"
+	var Ziv string = "七七"
+	var Kai string = "啾啾"
+	var Lee string = "李志乾"
+	var Hector string = "頂超"
+	var Neal string = "賴柏采"
+	var Cat string = "小貓咪"
+	var Alvin string = "張銘仁"
+
+
 func main() {
 	var err error
 	bot, err = linebot.New(os.Getenv("ChannelSecret"), os.Getenv("ChannelAccessToken"))
@@ -75,36 +107,7 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 	var TheCopperKey string = "頭目萬歲"
 	var UpdateInfo string = "小精靈版本"
 
-	var UserID string
-	//var RoomID string
-	var GroupID string
-	var pushKey string = "說話"
-	var getMyID string = "我的ID0806"
-	var VicID = "U847173972bc441a349c0e82362d2929b"
-	//var huaID = "U067447a742ea35c0e9fb6b130fecbef4"
-	//var BensonID string = ""
-	//var DrewID string = ""
-	var ZivID string = "Ud8c3fc8081078569ec484899938ef1af"
-	//var KaiID string = ""
-	//var LeeID string = ""
-	//var HectorID string = ""
-	//var NealID string = ""
-	//var CatID string = ""
-	//var AlvinID string = ""
-	var engineeringGroupID string = "C8d72858c11b68975383505916fd4162a"
-	
-	
 
-	var Vic string = "殺蛙"
-	var Benson string = "陳冠宇"
-	var Drew string = "彥竹"
-	var Ziv string = "七七"
-	var Kai string = "啾啾"
-	var Lee string = "李志乾"
-	var Hector string = "頂超"
-	var Neal string = "賴柏采"
-	var Cat string = "小貓咪"
-	var Alvin string = "張銘仁"
 	var Tongue string = "繞口令"
 
 
