@@ -77,7 +77,7 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 	var UpdateInfo string = "小精靈版本"
 
 	var getMyID string = "我的ID0806"
-	var wawaID = "U847173972bc441a349c0e82362d2929b"
+	//var wawaID = "U847173972bc441a349c0e82362d2929b"
 	
 	
 
