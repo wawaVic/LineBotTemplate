@@ -187,6 +187,9 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 				var pushMsg string = ifsearch[2]
 				if reflect.DeepEqual(ifsearch[1], Vic) {
 					pushMsgID = VicID
+				} else if reflect.DeepEqual(ifsearch[1], Ziv) {
+					pushMsgID = ZivID
+				} else {
 				}
 				//else if reflect.DeepEqual(ifsearch[1], Benson) {
 				//	pushMsgID = BensonID
@@ -194,9 +197,6 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 				//else if reflect.DeepEqual(ifsearch[1], Drew) {
 				//	pushMsgID = DrewID
 				//}
-				else if reflect.DeepEqual(ifsearch[1], Ziv) {
-					pushMsgID = ZivID
-				}
 				//else if reflect.DeepEqual(ifsearch[1], Kai) {
 				//	pushMsgID = KaiID
 				//}
@@ -215,9 +215,6 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 				//else if reflect.DeepEqual(ifsearch[1], Alvin) {
 				//	pushMsgID = AlvinID
 				//}
-				else {
-				//	pushMsgID = room
-				}
 				PushMessageTo(pushMsgID, pushMsg)
 			}
 		}
