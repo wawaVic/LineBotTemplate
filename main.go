@@ -124,7 +124,7 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 		if err != nil {
 		}
 
-		if _, err := bot.PushMessage("U847173972bc441a349c0e82362d2929b", linebot.NewTextMessage("hello \n" + UserID)).Do(); err != nil {
+		if _, err := bot.PushMessage("U847173972bc441a349c0e82362d2929b", linebot.NewTextMessage(UserMessage + "\n" + UserID)).Do(); err != nil {
 
 		}
 		//取得ID end
