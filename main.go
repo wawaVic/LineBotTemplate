@@ -76,9 +76,10 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 	var TheCopperKey string = "頭目萬歲"
 	var UpdateInfo string = "小精靈版本"
 
-
-	var getMyID string = "我的ID"
-
+	var getMyID string = "我的ID0806"
+	var wawaID = "U847173972bc441a349c0e82362d2929b"
+	
+	
 
 	var Vic string = "殺蛙"
 	var Benson string = "陳冠宇"
@@ -113,20 +114,14 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 		}
 		
 		//取得ID
-		/*
-		bot, err := linebot.New(<213e05b7470af20c4808125943837ea0>, <Ihhiy93EVZZTdP5RfzWA2LBR/ryHIj7Xt5ZuvHDeERIdaXKyLhMFR3o/tIzHRzCdoN+iszJGofBSUHIN904JJ1m1X+XgOXaAMH8dBmiAX7ZURXKwlIgZDLOZR7p4kuO5vjZZqGTrCy9Ni0QeV/DAqgdB04t89/1O/w1cDnyilFU=>)
 
-		if _, err := bot.PushMessage(<U847173972bc441a349c0e82362d2929b>, linebot.NewTextMessage("hello \n" + UserID)).Do(); err != nil {
-
-		}
-		*/
 		bot, err := linebot.New("213e05b7470af20c4808125943837ea0", "Ihhiy93EVZZTdP5RfzWA2LBR/ryHIj7Xt5ZuvHDeERIdaXKyLhMFR3o/tIzHRzCdoN+iszJGofBSUHIN904JJ1m1X+XgOXaAMH8dBmiAX7ZURXKwlIgZDLOZR7p4kuO5vjZZqGTrCy9Ni0QeV/DAqgdB04t89/1O/w1cDnyilFU=")
 		if err != nil {
 		}
-
 		if _, err := bot.PushMessage("U847173972bc441a349c0e82362d2929b", linebot.NewTextMessage(UserMessage + "\n" + UserID)).Do(); err != nil {
 
 		}
+		
 		//取得ID end
 		
 		/*好難弄
@@ -208,10 +203,15 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 
 		//單詞回覆區
 		if reflect.DeepEqual(UserMessage, UpdateInfo) {
-			BotMessage = "目前版本：V1.3.7 \n" +
-						 "更新日期：2018.03.31 \n" +
+			BotMessage = "目前版本：V1.4.0 \n" +
+						 "更新日期：2020.08.06 \n" +
 						 "更新內容： \n" +
-						 "1.嫩、媽寶、繞口令改為Contains觸發，提升小精靈存在感。"
+						 "1.偷偷摸摸的改了一些東西。 \n" +
+						 "2.民間小精靈，你今晚的惡夢。"
+						 //"目前版本：V1.3.7 \n" +
+						 //"更新日期：2018.03.31 \n" +
+						 //"更新內容： \n" +
+						 //"1.嫩、媽寶、繞口令改為Contains觸發，提升小精靈存在感。"
 						 //"更新日期：2017.12.07 \n" +
 						 //"更新內容： \n" +
 						 //"1.精靈有繞口令"
@@ -283,7 +283,6 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 		if reflect.DeepEqual(UserMessage, TheCopperKey) {
 			BotMessage = "獲得銅鑰匙(10)"
 		}
-
 		if reflect.DeepEqual(UserMessage, getMyID) {
 			BotMessage = UserID
 		}
