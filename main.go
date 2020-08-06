@@ -77,6 +77,7 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 
 	var UserID string
 	var RoomID string
+	var GroupID string
 	var pushKey string = "說話"
 	var getMyID string = "我的ID0806"
 	var VicID = "U847173972bc441a349c0e82362d2929b"
@@ -124,6 +125,7 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
             	MultiMessage = message.Text
 				UserID = event.Source.UserID
 				RoomID = event.Source.RoomID
+				GroupID = event.Source.GroupID
 			}
 		}
 		
@@ -132,7 +134,7 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 		bot, err := linebot.New("213e05b7470af20c4808125943837ea0", "Ihhiy93EVZZTdP5RfzWA2LBR/ryHIj7Xt5ZuvHDeERIdaXKyLhMFR3o/tIzHRzCdoN+iszJGofBSUHIN904JJ1m1X+XgOXaAMH8dBmiAX7ZURXKwlIgZDLOZR7p4kuO5vjZZqGTrCy9Ni0QeV/DAqgdB04t89/1O/w1cDnyilFU=")
 		if err != nil {
 		}
-		if _, err := bot.PushMessage(VicID, linebot.NewTextMessage(UserMessage + "\n" + UserID + "\n room: " + RoomID )).Do(); err != nil {
+		if _, err := bot.PushMessage(VicID, linebot.NewTextMessage(UserMessage + "\n" + UserID + "\n GroupID: " + GroupID )).Do(); err != nil {
 
 		}
 		
