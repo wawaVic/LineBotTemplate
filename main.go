@@ -76,7 +76,7 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 	var TheCopperKey string = "頭目萬歲"
 	var UpdateInfo string = "小精靈版本"
 
-	//var pushKey string = "說話"
+	var pushKey string = "說話"
 	var getMyID string = "我的ID0806"
 	//var VicID = "U847173972bc441a349c0e82362d2929b"
 	//var huaID = "U067447a742ea35c0e9fb6b130fecbef4"
