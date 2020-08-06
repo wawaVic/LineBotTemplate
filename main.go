@@ -123,7 +123,7 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
             	UserMessage = message.Text
             	MultiMessage = message.Text
 				UserID = event.Source.UserID
-				RoomID = event.Source.roomId
+				RoomID = event.Source.RoomID
 			}
 		}
 		
