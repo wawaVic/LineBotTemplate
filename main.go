@@ -362,7 +362,7 @@ func PushMessageTo(to string, message string) {
 		bot, err := linebot.New("213e05b7470af20c4808125943837ea0", "Ihhiy93EVZZTdP5RfzWA2LBR/ryHIj7Xt5ZuvHDeERIdaXKyLhMFR3o/tIzHRzCdoN+iszJGofBSUHIN904JJ1m1X+XgOXaAMH8dBmiAX7ZURXKwlIgZDLOZR7p4kuO5vjZZqGTrCy9Ni0QeV/DAqgdB04t89/1O/w1cDnyilFU=")
 		if err != nil {
 		}
-		if _, err := bot.PushMessage(to, linebot.NewTextMessage(message).Do(); err != nil {
+		if _, err := bot.PushMessage(to, linebot.NewTextMessage(message)).Do(); err != nil {
 
 		}
 }
