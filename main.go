@@ -111,6 +111,12 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 				UserID = event.Source.UserID
 			}
 		}
+		
+		//取得ID
+        if _, err := bot.PushMessage(<"U847173972bc441a349c0e82362d2929b">, linebot.NewTextMessage("hello \n" + UserID)).Do(); err != nil {
+		}
+		//取得ID end
+		
 		/*好難弄
 		//輸入以空白隔開字串
 		spacesplit := strings.Split(MultiMessage, " ")
