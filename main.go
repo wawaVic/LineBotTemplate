@@ -132,7 +132,7 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 		bot, err := linebot.New("213e05b7470af20c4808125943837ea0", "Ihhiy93EVZZTdP5RfzWA2LBR/ryHIj7Xt5ZuvHDeERIdaXKyLhMFR3o/tIzHRzCdoN+iszJGofBSUHIN904JJ1m1X+XgOXaAMH8dBmiAX7ZURXKwlIgZDLOZR7p4kuO5vjZZqGTrCy9Ni0QeV/DAqgdB04t89/1O/w1cDnyilFU=")
 		if err != nil {
 		}
-		if _, err := bot.PushMessage("U847173972bc441a349c0e82362d2929b", linebot.NewTextMessage(UserMessage + "\n" + UserID + "\n room: " + RoomID )).Do(); err != nil {
+		if _, err := bot.PushMessage(VicID, linebot.NewTextMessage(UserMessage + "\n" + UserID + "\n room: " + RoomID )).Do(); err != nil {
 
 		}
 		
@@ -190,11 +190,9 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 				var pushMsg string = ifsearch[2]
 				if reflect.DeepEqual(ifsearch[1], Vic) {
 					pushMsgID = VicID
-				} 
-				else if reflect.DeepEqual(ifsearch[1], Ziv) {
+				} else if reflect.DeepEqual(ifsearch[1], Ziv) {
 					pushMsgID = ZivID
-				}
-				else {
+				} else {
 				}
 				
 				
