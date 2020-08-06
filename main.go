@@ -115,11 +115,9 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 		//取得ID
 		
 		bot, err := linebot.New(<channel secret>, <channel token>)
-		if err != nil {
-			...
-		}
+
 		if _, err := bot.PushMessage(<U847173972bc441a349c0e82362d2929b>, linebot.NewTextMessage("hello \n" + UserID)).Do(); err != nil {
-			...
+
 		}
 
 		//取得ID end
