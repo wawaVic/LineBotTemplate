@@ -108,7 +108,7 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 			case *linebot.TextMessage:
             	UserMessage = message.Text
             	MultiMessage = message.Text
-				UserID = event[0].source.userId
+				UserID = event.Source.UserId
 			}
 		}
 		/*好難弄
