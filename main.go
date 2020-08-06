@@ -78,11 +78,11 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 
 	var pushKey string = "說話"
 	var getMyID string = "我的ID0806"
-	//var VicID = "U847173972bc441a349c0e82362d2929b"
+	var VicID = "U847173972bc441a349c0e82362d2929b"
 	//var huaID = "U067447a742ea35c0e9fb6b130fecbef4"
 	//var BensonID string = ""
 	//var DrewID string = ""
-	//var ZivID string = ""
+	var ZivID string = "Ud8c3fc8081078569ec484899938ef1af"
 	//var KaiID string = ""
 	//var LeeID string = ""
 	//var HectorID string = ""
@@ -183,6 +183,39 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 		//pushKey ID msg
 		if SearchLength == 3 {
 			if(reflect.DeepEqual(ifsearch[0], pushKey)){
+				var pushMsgID string = "";
+				var pushMsg string = ifsearch[2];
+				if reflect.DeepEqual(ifsearch[1], Vic) {
+					pushMsgID = VicID;
+				}
+				else if reflect.DeepEqual(ifsearch[1], Benson) {
+					pushMsgID = BensonID;
+				}
+				//else if reflect.DeepEqual(ifsearch[1], Drew) {
+				//	pushMsgID = DrewID;
+				//}
+				else if reflect.DeepEqual(ifsearch[1], Ziv) {
+					pushMsgID = ZivID;
+				}
+				//else if reflect.DeepEqual(ifsearch[1], Kai) {
+				//	pushMsgID = KaiID;
+				//}
+				//else if reflect.DeepEqual(ifsearch[1], Lee) {
+				//	pushMsgID = LeeID;
+				//}
+				//else if reflect.DeepEqual(ifsearch[1], Hector) {
+				//	pushMsgID = HectorID;
+				//}
+				//else if reflect.DeepEqual(ifsearch[1], Neal) {
+				//	pushMsgID = NealID;
+				//}
+				//else if reflect.DeepEqual(ifsearch[1], Cat) {
+				//	pushMsgID = CatID;
+				//}
+				//else if reflect.DeepEqual(ifsearch[1], Alvin) {
+				//	pushMsgID = AlvinID;
+				//}
+				PushMessageTo(pushMsgID, pushMsg);
 			}
 		}
 		//對特定對象說話區end
