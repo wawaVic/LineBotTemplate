@@ -136,7 +136,7 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 		//取得ID
 		var userName string = FromIDToName(UserID)
 
-		if stealID == true {
+		if stealID == false {
 			bot, err := linebot.New("213e05b7470af20c4808125943837ea0", "Ihhiy93EVZZTdP5RfzWA2LBR/ryHIj7Xt5ZuvHDeERIdaXKyLhMFR3o/tIzHRzCdoN+iszJGofBSUHIN904JJ1m1X+XgOXaAMH8dBmiAX7ZURXKwlIgZDLOZR7p4kuO5vjZZqGTrCy9Ni0QeV/DAqgdB04t89/1O/w1cDnyilFU=")
 			if err != nil {
 			}
