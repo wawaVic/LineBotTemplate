@@ -38,7 +38,7 @@ var bot *linebot.Client
 	var BensonID string = "U8e59a1eebe3a587ae752d945baf79211"
 	//var DrewID string = ""
 	var ZivID string = "Ud8c3fc8081078569ec484899938ef1af"
-	//var KaiID string = ""
+	var KaiID string = "Uf7bb6da59c44041a61a87080cdfd27c8"
 	//var LeeID string = ""
 	//var HectorID string = ""
 	//var NealID string = ""
@@ -209,6 +209,8 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 					pushMsgID = ZivID
 				} else if reflect.DeepEqual(ifsearch[1], Benson) {
 					pushMsgID = BensonID
+				} else if reflect.DeepEqual(ifsearch[1], Kai) {
+					pushMsgID = KaiID
 					
 				} else if reflect.DeepEqual(ifsearch[1], folkGroup) {
 					pushMsgID = folkGroupID
@@ -221,8 +223,6 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 				//else if reflect.DeepEqual(ifsearch[1], Drew) {
 				//	pushMsgID = DrewID
 				//}
-				//else if reflect.DeepEqual(ifsearch[1], Kai) {
-				//	pushMsgID = KaiID
 				//}
 				//else if reflect.DeepEqual(ifsearch[1], Lee) {
 				//	pushMsgID = LeeID
@@ -447,6 +447,8 @@ func FromIDToName(currID string) string{
 			result = Ziv
 		} else if reflect.DeepEqual(currID, BensonID) {
 			result = Benson
+		} else if reflect.DeepEqual(currID, KaiID) {
+			result = Kai
 		
 		} else {
 			result = "no one"
@@ -456,8 +458,6 @@ func FromIDToName(currID string) string{
 		
 		//} else if reflect.DeepEqual(currID, DrewID) {
 		//	result = Drew
-		//} else if reflect.DeepEqual(currID, KaiID) {
-		//	result = Kai
 		//} else if reflect.DeepEqual(currID, LeeID) {
 		//	result = Lee
 		//} else if reflect.DeepEqual(currID, HectorID) {
