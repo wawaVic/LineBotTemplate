@@ -35,7 +35,7 @@ var bot *linebot.Client
 	var getMyID string = "我的ID0806"
 	var VicID = "U847173972bc441a349c0e82362d2929b"
 	//var huaID = "U067447a742ea35c0e9fb6b130fecbef4"
-	//var BensonID string = ""
+	var BensonID string = "U8e59a1eebe3a587ae752d945baf79211"
 	//var DrewID string = ""
 	var ZivID string = "Ud8c3fc8081078569ec484899938ef1af"
 	//var KaiID string = ""
@@ -45,6 +45,7 @@ var bot *linebot.Client
 	//var CatID string = ""
 	//var AlvinID string = ""
 	var engineeringGroupID string = "C8d72858c11b68975383505916fd4162a"
+	//var folkGroupID string = "C0519d17c2130cdb5ab840db2386383c8"
 	
 	var stealID bool = false;
 	
@@ -441,6 +442,8 @@ func FromIDToName(currID string) string{
 			result = Vic
 		} else if reflect.DeepEqual(currID, ZivID) {
 			result = Ziv
+		} else if reflect.DeepEqual(currID, BensonID) {
+			result = Benson
 		
 		} else {
 			result = "no one"
@@ -448,8 +451,6 @@ func FromIDToName(currID string) string{
 		}
 		
 		
-		//} else if reflect.DeepEqual(currID, BensonID) {
-		//	result = Benson
 		//} else if reflect.DeepEqual(currID, DrewID) {
 		//	result = Drew
 		//} else if reflect.DeepEqual(currID, KaiID) {
