@@ -45,7 +45,7 @@ var bot *linebot.Client
 	//var CatID string = ""
 	//var AlvinID string = ""
 	var engineeringGroupID string = "C8d72858c11b68975383505916fd4162a"
-	//var folkGroupID string = "C0519d17c2130cdb5ab840db2386383c8"
+	var folkGroupID string = "C0519d17c2130cdb5ab840db2386383c8"
 	
 	var stealID bool = false;
 	
@@ -59,6 +59,7 @@ var bot *linebot.Client
 	var Hector string = "頂超"
 	var Neal string = "賴柏采"
 	var Cat string = "小貓咪"
+	var folkGroup string = "民間"
 	var Alvin string = "張銘仁"
 
 
@@ -206,15 +207,17 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 					pushMsgID = VicID
 				} else if reflect.DeepEqual(ifsearch[1], Ziv) {
 					pushMsgID = ZivID
+				} else if reflect.DeepEqual(ifsearch[1], Benson) {
+					pushMsgID = BensonID
+					
+				} else if reflect.DeepEqual(ifsearch[1], folkGroup) {
+					pushMsgID = folkGroupID
 				
 				} else {
 					pushMsgID = engineeringGroupID
 				}
 				
 				
-				//else if reflect.DeepEqual(ifsearch[1], Benson) {
-				//	pushMsgID = BensonID
-				//}
 				//else if reflect.DeepEqual(ifsearch[1], Drew) {
 				//	pushMsgID = DrewID
 				//}
