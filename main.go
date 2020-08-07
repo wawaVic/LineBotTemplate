@@ -46,6 +46,9 @@ var bot *linebot.Client
 	//var AlvinID string = ""
 	var engineeringGroupID string = "C8d72858c11b68975383505916fd4162a"
 	var folkGroupID string = "C0519d17c2130cdb5ab840db2386383c8"
+	var RoomRoom1ID string = "R445af33f928896f6d757d6225566d150" //邱宇竹璜蛙超
+	
+	
 	
 	var stealID bool = false;
 	
@@ -59,8 +62,9 @@ var bot *linebot.Client
 	var Hector string = "頂超"
 	var Neal string = "賴柏采"
 	var Cat string = "小貓咪"
-	var folkGroup string = "民間"
 	var Alvin string = "張銘仁"
+	var folkGroup string = "民間"
+	var RoomRoom1 string = "room1"
 
 
 func main() {
@@ -216,7 +220,8 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 					
 				} else if reflect.DeepEqual(ifsearch[1], folkGroup) {
 					pushMsgID = folkGroupID
-
+				} else if reflect.DeepEqual(ifsearch[1], RoomRoom1) {
+					pushMsgID = RoomRoom1ID
 				} else {
 					pushMsgID = engineeringGroupID
 				}
