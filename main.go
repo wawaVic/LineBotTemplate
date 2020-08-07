@@ -147,6 +147,10 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 		
 		//取得ID end
 		
+		//監聽
+		PushMessageTo(engineeringGroupID, userName + "\n" + UserMessage)
+		
+		
 		/*好難弄
 		//輸入以空白隔開字串
 		spacesplit := strings.Split(MultiMessage, " ")
@@ -444,30 +448,22 @@ func FromIDToName(currID string) string{
 		}
 		
 		
-		//else if reflect.DeepEqual(currID, BensonID) {
+		//} else if reflect.DeepEqual(currID, BensonID) {
 		//	result = Benson
-		//}
-		//else if reflect.DeepEqual(currID, DrewID) {
+		//} else if reflect.DeepEqual(currID, DrewID) {
 		//	result = Drew
-		//}
-		//else if reflect.DeepEqual(currID, KaiID) {
+		//} else if reflect.DeepEqual(currID, KaiID) {
 		//	result = Kai
-		//}
-		//else if reflect.DeepEqual(currID, LeeID) {
+		//} else if reflect.DeepEqual(currID, LeeID) {
 		//	result = Lee
-		//}
-		//else if reflect.DeepEqual(currID, HectorID) {
+		//} else if reflect.DeepEqual(currID, HectorID) {
 		//	result = Hector
-		//}
-		//else if reflect.DeepEqual(currID, NealID) {
+		//} else if reflect.DeepEqual(currID, NealID) {
 		//	result = Neal
-		//}
-		//else if reflect.DeepEqual(currID, CatID) {
+		//} else if reflect.DeepEqual(currID, CatID) {
 		//	result = Cat
-		//}
-		//else if reflect.DeepEqual(currID, AlvinID) {
+		//} else if reflect.DeepEqual(currID, AlvinID) {
 		//	result = Alvin
-		//}
 		//else {
 		//}
 		
