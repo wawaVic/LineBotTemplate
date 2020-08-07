@@ -36,7 +36,7 @@ var bot *linebot.Client
 	var VicID = "U847173972bc441a349c0e82362d2929b"
 	//var huaID = "U067447a742ea35c0e9fb6b130fecbef4"
 	var BensonID string = "U8e59a1eebe3a587ae752d945baf79211"
-	//var DrewID string = ""
+	var DrewID string = "U66d309e9aedf949658d96d5f1da66b4d"
 	var ZivID string = "Ud8c3fc8081078569ec484899938ef1af"
 	var KaiID string = "Uf7bb6da59c44041a61a87080cdfd27c8"
 	//var LeeID string = ""
@@ -211,35 +211,27 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 					pushMsgID = BensonID
 				} else if reflect.DeepEqual(ifsearch[1], Kai) {
 					pushMsgID = KaiID
+				} else if reflect.DeepEqual(ifsearch[1], Drew) {
+					pushMsgID = DrewID
 					
 				} else if reflect.DeepEqual(ifsearch[1], folkGroup) {
 					pushMsgID = folkGroupID
-				
+
 				} else {
 					pushMsgID = engineeringGroupID
 				}
 				
 				
-				//else if reflect.DeepEqual(ifsearch[1], Drew) {
-				//	pushMsgID = DrewID
-				//}
-				//}
-				//else if reflect.DeepEqual(ifsearch[1], Lee) {
+				//} else if reflect.DeepEqual(ifsearch[1], Lee) {
 				//	pushMsgID = LeeID
-				//}
-				//else if reflect.DeepEqual(ifsearch[1], Hector) {
+				//} else if reflect.DeepEqual(ifsearch[1], Hector) {
 				//	pushMsgID = HectorID
-				//}
-				//else if reflect.DeepEqual(ifsearch[1], Neal) {
+				//} else if reflect.DeepEqual(ifsearch[1], Neal) {
 				//	pushMsgID = NealID
-				//}
-				//else if reflect.DeepEqual(ifsearch[1], Cat) {
+				//} else if reflect.DeepEqual(ifsearch[1], Cat) {
 				//	pushMsgID = CatID
-				//}
-				//else if reflect.DeepEqual(ifsearch[1], Alvin) {
+				//} else if reflect.DeepEqual(ifsearch[1], Alvin) {
 				//	pushMsgID = AlvinID
-				//}
-				//else {
 				//}
 				PushMessageTo(pushMsgID, pushMsg)
 			}
@@ -449,6 +441,8 @@ func FromIDToName(currID string) string{
 			result = Benson
 		} else if reflect.DeepEqual(currID, KaiID) {
 			result = Kai
+		} else if reflect.DeepEqual(currID, DrewID) {
+			result = Drew
 		
 		} else {
 			result = "no one"
@@ -456,8 +450,6 @@ func FromIDToName(currID string) string{
 		}
 		
 		
-		//} else if reflect.DeepEqual(currID, DrewID) {
-		//	result = Drew
 		//} else if reflect.DeepEqual(currID, LeeID) {
 		//	result = Lee
 		//} else if reflect.DeepEqual(currID, HectorID) {
