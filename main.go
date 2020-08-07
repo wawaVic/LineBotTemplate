@@ -46,6 +46,7 @@ var bot *linebot.Client
 	//var AlvinID string = ""
 	var engineeringGroupID string = "C8d72858c11b68975383505916fd4162a"
 	
+	var stealID bool = false;
 	
 
 	var Vic string = "殺蛙"
@@ -133,12 +134,15 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 		}
 		
 		//取得ID
+		var userName string = FromIDToName(UserID)
 
-		bot, err := linebot.New("213e05b7470af20c4808125943837ea0", "Ihhiy93EVZZTdP5RfzWA2LBR/ryHIj7Xt5ZuvHDeERIdaXKyLhMFR3o/tIzHRzCdoN+iszJGofBSUHIN904JJ1m1X+XgOXaAMH8dBmiAX7ZURXKwlIgZDLOZR7p4kuO5vjZZqGTrCy9Ni0QeV/DAqgdB04t89/1O/w1cDnyilFU=")
-		if err != nil {
-		}
-		if _, err := bot.PushMessage(engineeringGroupID, linebot.NewTextMessage(FromIDTOName(UserID) + "\n" + UserMessage + "\n" + UserID + "\n GroupID: " + GroupID )).Do(); err != nil {
+		if stealID == true {
+			bot, err := linebot.New("213e05b7470af20c4808125943837ea0", "Ihhiy93EVZZTdP5RfzWA2LBR/ryHIj7Xt5ZuvHDeERIdaXKyLhMFR3o/tIzHRzCdoN+iszJGofBSUHIN904JJ1m1X+XgOXaAMH8dBmiAX7ZURXKwlIgZDLOZR7p4kuO5vjZZqGTrCy9Ni0QeV/DAqgdB04t89/1O/w1cDnyilFU=")
+			if err != nil {
+			}
+			if _, err := bot.PushMessage(engineeringGroupID, linebot.NewTextMessage(userName + "\n" + UserMessage + "\n" + UserID + "\n GroupID: " + GroupID )).Do(); err != nil {
 
+			}
 		}
 		
 		//取得ID end
@@ -425,8 +429,9 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 }
 
 //ID反查名字
-func FromIDTOName(currID string) string{
+func FromIDToName(currID string) string{
 	var result string =	""
+	stealID = true
 
 		if reflect.DeepEqual(currID, VicID) {
 			result = Vic
@@ -435,6 +440,7 @@ func FromIDTOName(currID string) string{
 		
 		} else {
 			result = "no one"
+			stealID = false
 		}
 		
 		
