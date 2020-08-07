@@ -29,7 +29,7 @@ import (
 var bot *linebot.Client
 
 	var UserID string
-	//var RoomID string
+	var RoomID string
 	var GroupID string
 	var pushKey string = "說話"
 	var getMyID string = "我的ID0806"
@@ -130,7 +130,7 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
             	UserMessage = message.Text
             	MultiMessage = message.Text
 				UserID = event.Source.UserID
-				//RoomID = event.Source.RoomID
+				RoomID = event.Source.RoomID
 				GroupID = event.Source.GroupID
 			}
 		}
@@ -142,7 +142,7 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 			bot, err := linebot.New("213e05b7470af20c4808125943837ea0", "Ihhiy93EVZZTdP5RfzWA2LBR/ryHIj7Xt5ZuvHDeERIdaXKyLhMFR3o/tIzHRzCdoN+iszJGofBSUHIN904JJ1m1X+XgOXaAMH8dBmiAX7ZURXKwlIgZDLOZR7p4kuO5vjZZqGTrCy9Ni0QeV/DAqgdB04t89/1O/w1cDnyilFU=")
 			if err != nil {
 			}
-			if _, err := bot.PushMessage(engineeringGroupID, linebot.NewTextMessage(userName + "\n" + UserMessage + "\n" + UserID + "\n GroupID: " + GroupID )).Do(); err != nil {
+			if _, err := bot.PushMessage(engineeringGroupID, linebot.NewTextMessage(userName + "\n" + UserMessage + "\n" + UserID + "\n GroupID: " + GroupID)).Do(); err != nil {
 
 			}
 		}
@@ -150,7 +150,7 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 		//取得ID end
 		
 		//監聽
-		PushMessageTo(engineeringGroupID, userName + "\n" + UserMessage)
+		PushMessageTo(engineeringGroupID, userName + "\n" + UserMessage + "\n RoomID: " + RoomID )
 		
 		
 		/*好難弄
