@@ -41,9 +41,9 @@ var bot *linebot.Client
 	var KaiID string = "Uf7bb6da59c44041a61a87080cdfd27c8"
 	//var LeeID string = ""
 	//var HectorID string = ""
-	//var NealID string = ""
+	var NealID string = "Uf9081d2f4faa03bbd9015278382ad038"
 	//var CatID string = ""
-	//var AlvinID string = ""
+	var AlvinID string = "U941a6d3578155b1841388f24cf8b348d"
 	var engineeringGroupID string = "C8d72858c11b68975383505916fd4162a"
 	var folkGroupID string = "C0519d17c2130cdb5ab840db2386383c8"
 	var RoomRoom1ID string = "R445af33f928896f6d757d6225566d150" //邱宇竹璜蛙超
@@ -223,6 +223,12 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 					pushMsgID = folkGroupID
 				} else if reflect.DeepEqual(ifsearch[1], RoomRoom1) {
 					pushMsgID = RoomRoom1ID
+				} else if reflect.DeepEqual(ifsearch[1], Neal) {
+					pushMsgID = NealID
+				} else if reflect.DeepEqual(ifsearch[1], Alvin) {
+					pushMsgID = AlvinID
+
+
 				} else {
 					pushMsgID = engineeringGroupID
 				}
@@ -232,12 +238,8 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 				//	pushMsgID = LeeID
 				//} else if reflect.DeepEqual(ifsearch[1], Hector) {
 				//	pushMsgID = HectorID
-				//} else if reflect.DeepEqual(ifsearch[1], Neal) {
-				//	pushMsgID = NealID
 				//} else if reflect.DeepEqual(ifsearch[1], Cat) {
 				//	pushMsgID = CatID
-				//} else if reflect.DeepEqual(ifsearch[1], Alvin) {
-				//	pushMsgID = AlvinID
 				//}
 				PushMessageTo(pushMsgID, pushMsg)
 			}
@@ -449,6 +451,10 @@ func FromIDToName(currID string) string{
 			result = Kai
 		} else if reflect.DeepEqual(currID, DrewID) {
 			result = Drew
+		} else if reflect.DeepEqual(currID, NealID) {
+			result = Neal
+		} else if reflect.DeepEqual(currID, AlvinID) {
+			result = Alvin
 		
 		} else {
 			result = "no one"
@@ -460,12 +466,8 @@ func FromIDToName(currID string) string{
 		//	result = Lee
 		//} else if reflect.DeepEqual(currID, HectorID) {
 		//	result = Hector
-		//} else if reflect.DeepEqual(currID, NealID) {
-		//	result = Neal
 		//} else if reflect.DeepEqual(currID, CatID) {
 		//	result = Cat
-		//} else if reflect.DeepEqual(currID, AlvinID) {
-		//	result = Alvin
 		//else {
 		//}
 		
