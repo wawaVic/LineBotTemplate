@@ -155,7 +155,7 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 		
 		//監聽
 		//PushMessageTo(engineeringGroupID, userName + "\n" + UserMessage + "\n RoomID: " + RoomID )
-		PushMessageTo(engineeringGroupID, userName + "\n" + UserMessage)
+		//PushMessageTo(engineeringGroupID, userName + "\n" + UserMessage)
 		
 		
 		/*好難弄
