@@ -44,6 +44,9 @@ var bot *linebot.Client
 	var NealID string = "Uf9081d2f4faa03bbd9015278382ad038"
 	var CatID string = "U10ff0fcfd40bf32463aaa93b115d5cc9"
 	var AlvinID string = "U941a6d3578155b1841388f24cf8b348d"
+
+	var AmyID string = "U66928bb0d3ae2871764b6b4dc7f858db"
+
 	var engineeringGroupID string = "C8d72858c11b68975383505916fd4162a"
 	var folkGroupID string = "C0519d17c2130cdb5ab840db2386383c8"
 	var RoomRoom1ID string = "R445af33f928896f6d757d6225566d150" //邱宇竹璜蛙超
@@ -63,6 +66,9 @@ var bot *linebot.Client
 	var Neal string = "賴柏采"
 	var Cat string = "小貓咪"
 	var Alvin string = "張銘仁"
+	
+	var Amy string = "Amy"
+	
 	var folkGroup string = "民間"
 	var RoomRoom1 string = "room1"
 
@@ -458,6 +464,8 @@ func FromIDToName(currID string) string{
 			result = Cat
 		} else if reflect.DeepEqual(currID, HectorID) {
 			result = Hector
+		} else if reflect.DeepEqual(currID, AmyID) {
+			result = Amy
 		
 		} else {
 			result = "no one"
